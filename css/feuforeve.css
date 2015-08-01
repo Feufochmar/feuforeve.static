@@ -1,0 +1,98 @@
+body {
+  /*background-color: hsla(230, 10%, 70%, 1.0);*/
+  background: url(background.png);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h1 {
+  margin: 1px;
+  padding: 1px;
+}
+
+h2 {
+  margin: 1px;
+  padding: 1px;
+}
+
+h3 {
+  margin: 1px;
+  padding: 1px;
+}
+
+hr {
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+}
+
+.box {
+  background-color: hsla(230, 10%, 90%, 0.33);
+  color: hsla(230, 10%, 20%, 1.0);
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.top {
+  text-align: center;
+  opacity: 1.0;
+  color: hsla(230, 10%, 20%, 1.0);
+}
+
+.menubar {
+  position: relative;
+}
+
+.menubar-item {
+  float: left;
+}
+
+.menubar-text {
+  opacity: 1.0;
+  color: hsla(230, 10%, 20%, 1.0);
+}
+
+.main {
+  opacity: 1.0;
+  color: hsla(230, 10%, 20%, 1.0);
+}
+
+.reset-layout {
+  clear: both;
+}
+
+.bottom {
+  text-align: center;
+  opacity: 1.0;
+  color: hsla(230, 10%, 20%, 1.0);
+}
+
+table {
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-collapse: collapse;
+}
+
+th {
+  background-color: hsla(230, 10%, 90%, 1.0);
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+
+td {
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
