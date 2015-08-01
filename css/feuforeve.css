@@ -69,11 +69,14 @@ footer {
 
 .menubar-item {
   float: left;
-}
-
-.menubar-text {
-  opacity: 1.0;
+  background-color: hsla(230, 10%, 90%, 0.33);
   color: hsla(230, 10%, 20%, 1.0);
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
 }
 
 .reset-layout {
