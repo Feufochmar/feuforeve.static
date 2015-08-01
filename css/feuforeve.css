@@ -48,6 +48,15 @@ footer {
   text-align: center;
 }
 
+.author-date {
+  text-align: right;
+  font-style: italic;
+}
+
+.author {
+  font-variant: small-caps;
+}
+
 .banner {
   text-align: center;
   opacity: 1.0;
