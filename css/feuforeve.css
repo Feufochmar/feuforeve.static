@@ -25,7 +25,7 @@ hr {
   border-color: hsla(230, 10%, 20%, 1.0);
 }
 
-.box {
+article {
   background-color: hsla(230, 10%, 90%, 0.33);
   color: hsla(230, 10%, 20%, 1.0);
   border-style: solid;
@@ -36,7 +36,19 @@ hr {
   padding: 10px;
 }
 
-.top {
+footer {
+  background-color: hsla(230, 10%, 90%, 0.33);
+  color: hsla(230, 10%, 20%, 1.0);
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.banner {
   text-align: center;
   opacity: 1.0;
   color: hsla(230, 10%, 20%, 1.0);
@@ -55,19 +67,8 @@ hr {
   color: hsla(230, 10%, 20%, 1.0);
 }
 
-.main {
-  opacity: 1.0;
-  color: hsla(230, 10%, 20%, 1.0);
-}
-
 .reset-layout {
   clear: both;
-}
-
-.bottom {
-  text-align: center;
-  opacity: 1.0;
-  color: hsla(230, 10%, 20%, 1.0);
 }
 
 table {
