@@ -1,0 +1,12 @@
+#raw {
+  height: 400px;
+}
+#flag {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 0px;
+  width: 600px;
+}
+svg {
+  display: block;
+}
