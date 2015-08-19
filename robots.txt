@@ -1,4 +1,6 @@
 User-agent: *
-Disallow: /generator*
-Disallow: /about-me.html
+Disallow: /FloraCharacterGenerator
+Disallow: /ArnYtron3000
+Disallow: /FlagGenerator
+Disallow: /AboutMe
 
