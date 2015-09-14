@@ -3,4 +3,5 @@ Disallow: /FloraCharacterGenerator
 Disallow: /ArnYtron3000
 Disallow: /FlagGenerator
 Disallow: /AboutMe
+Disallow: /DailyIsland/Generator
 
