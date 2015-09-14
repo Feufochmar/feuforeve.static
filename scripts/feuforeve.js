@@ -15,6 +15,13 @@ function getSvgRawImage(address, idSvg, idRaw) {
   request.open('GET', address, false);
   request.send(null);
 }
+
 function getSvgImage(address, idSvg) {
   getSvgRawImage(address, idSvg, false);
+}
+
+function reloadObject(idObj) {
+  var obj = document.getElementById(idObj);
+  var data = obj.getAttribute('data');
+  obj.setAttribute('data', data);
 }
