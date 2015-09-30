@@ -15,7 +15,7 @@
    id="toy.cat.creator.by.feufochmar.based.on.glip.floraverse"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="toy-cat-creator-without-ref.svg"
+   sodipodi:docname="toy-cat-creator.svg"
    onload="initColors();disableContext();">
   <title
      id="title4919">Toy Cat Creator</title>
@@ -72,7 +72,7 @@
   },
   'clothes-top': {
     'layers': [
-      'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.clothes.top.potion'
+      'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.none'
     ],
     'idx': 1
   },
@@ -204,8 +204,8 @@ function initColors() {
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="500"
-     inkscape:cy="333.42512"
+     inkscape:cx="150.11911"
+     inkscape:cy="497.31565"
      inkscape:document-units="px"
      inkscape:current-layer="layer.none"
      showgrid="false"
@@ -1151,20 +1151,6 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer.clothes.top.potion"
-     class="layer-clothes-top-potion"
-     style="display:none"
-     sodipodi:insensitive="true">
-    <path
-       style="display:inline;opacity:1;fill:#1d0046;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 240.625,237.34766 c -1.41889,1.41889 -5.03227,14.47369 -6.39844,19.57226 -3.58111,13.36489 -24.97124,102.4881 -24.84961,143.12108 l 51.51758,2e-5 c 1.08532,-20.58926 -2.51507,-118.36503 9.01172,-138.33002 42.48872,-16.21777 77.17571,-10.14488 110.4375,0 11.93053,20.66429 7.69219,118.08932 8.75781,138.33002 l 51.51563,-2e-5 c 0.12163,-40.63297 -21.2685,-129.76009 -24.84961,-143.12498 -1.36593,-5.09772 -4.83025,-16.85218 -6.39844,-19.56836 -57.60809,13.51361 -111.13605,13.81748 -168.74414,0 z"
-       id="clothes.top.potion.1"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csccccccscc"
-       class="clothes.top.1" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
      id="layer.shoes.seeds"
      class="layer-shoes-seeds"
      style="display:inline"
@@ -1359,6 +1345,13 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      class="layer-clothes-top-potion-above"
      style="display:none"
      sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#1d0046;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 240.625,237.34766 c -1.41889,1.41889 -5.03227,14.47369 -6.39844,19.57226 -3.58111,13.36489 -24.97124,102.4881 -24.84961,143.12108 l 71.51758,2e-5 c 1.08532,-20.58926 9.48493,-118.36503 21.01172,-138.33002 42.48872,-16.21777 13.17571,-10.14488 46.4375,0 11.93053,20.66429 19.69219,118.08932 20.75781,138.33002 l 71.51563,-2e-5 c 0.12163,-40.63297 -21.2685,-129.76009 -24.84961,-143.12498 -1.36593,-5.09772 -4.83025,-16.85218 -6.39844,-19.56836 -57.60809,13.51361 -111.13605,13.81748 -168.74414,0 z"
+       id="clothes.top.potion.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccccccscc"
+       class="clothes.top.1" />
     <path
        style="display:inline;opacity:1;fill:#fed6f0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 240.625,237.34766 c -1.41889,1.41889 -5.03227,14.47369 -6.39844,19.57226 -0.28969,1.08115 -0.66263,2.81538 -1.06836,4.82227 l 36.74219,0 c 0.002,-0.009 0.004,-0.0218 0.006,-0.0312 l 110.4375,0 c 0.002,0.009 0.004,0.0218 0.006,0.0312 l 36.48828,0 c -0.40605,-2.00879 -0.78043,-3.74433 -1.07031,-4.82617 -1.36593,-5.09772 -4.83025,-16.85218 -6.39844,-19.56836 z"
