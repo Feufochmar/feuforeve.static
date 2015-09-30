@@ -65,19 +65,26 @@
   },
   'clothes-bottom': {
     'layers': [
-      'layer.none', 'layer.clothes.bottom.seeds', 'layer.clothes.bottom.itchy'
+      'layer.none', 'layer.clothes.bottom.seeds', 'layer.clothes.bottom.itchy',
+      'layer.clothes.bottom.potion'
     ],
     'idx': 1
   },
   'clothes-top': {
     'layers': [
-      'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy'
+      'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.clothes.top.potion'
     ],
     'idx': 1
   },
   'clothes-top-above': {
     'layers': [
-      'layer.none', 'layer.none', 'layer.clothes.top.itchy.above'
+      'layer.none', 'layer.none', 'layer.clothes.top.itchy.above', 'layer.clothes.top.potion.above'
+    ],
+    'idx': 1
+  },
+  'clothes-top-below': {
+    'layers': [
+      'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.potion.below'
     ],
     'idx': 1
   },
@@ -197,8 +204,8 @@ function initColors() {
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="403.83505"
-     inkscape:cy="298.62002"
+     inkscape:cx="500"
+     inkscape:cy="333.42512"
      inkscape:document-units="px"
      inkscape:current-layer="layer.none"
      showgrid="false"
@@ -484,7 +491,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="control.clothes.top.next"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
-       onclick="nextPattern(1, 'clothes-top'); nextPattern(1, 'clothes-top-above');"
+       onclick="nextPattern(1, 'clothes-top'); nextPattern(1, 'clothes-top-above'); nextPattern(1, 'clothes-top-below');"
        class="control.next"
        oncontextmenu="nextPattern(-1, 'clothes-top'); nextPattern(-1, 'clothes-top-above');" />
     <rect
@@ -685,6 +692,52 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      style="display:inline" />
   <g
      inkscape:groupmode="layer"
+     id="layer13"
+     class="layer-tail-back"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#d31568;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 508.56836,284.44336 c -30.75791,1.39582 -57.99427,24.24491 -68.5957,52.51367 -5.98363,23.18769 5.4633,45.96691 14.05078,66.87891 7.03333,16.41433 17.70359,33.45806 15.2832,51.89258 -5.91957,10.62762 -20.57004,9.65446 -30.89258,8.5996 -33.04243,-3.86648 -63.52441,-18.91546 -92.69531,-33.59179 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 40.08885,22.21156 83.43551,43.43204 130.28045,43.70027 18.02655,-0.57014 38.09716,-11.58436 41.47931,-30.62801 4.41753,-23.14923 -8.44474,-44.7081 -16.77477,-65.36081 -7.01981,-15.88693 -16.26301,-32.90613 -12.83656,-50.79544 6.55479,-16.30011 21.89819,-28.33228 38.45704,-33.25195 8.00291,-1.96399 19.05672,1.32805 19.92578,10.7461 2.53571,14.38691 -2.20435,28.81802 -3.99368,43.13168 -4.0294,21.37588 0.33714,44.0725 8.51185,65.13064 15.17646,39.09475 4.87161,-0.208 11.64653,-3.947 5.42729,-2.99525 27.71928,37.25503 10.76999,-8.13862 -6.86012,-18.37279 -6.97825,-37.77858 -5.06493,-56.78474 3.66447,-19.34692 7.59915,-41.34557 -3.1139,-59.224 -7.38321,-10.49942 -20.27065,-16.63411 -33.0293,-16.39648 z"
+       id="tail.back"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccsssccc"
+       class="body.color.1" />
+  </g>
+  <g
+     style="display:none"
+     class="layer-tail-pattern-itchy"
+     id="layer.tail.pattern.itchy"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 508.56836,284.44336 c -17.04264,0.77341 -32.99695,8.14054 -45.64648,19.35937 l 14.91992,20.34375 c 7.13419,-6.59292 15.91417,-11.49923 25.07422,-14.2207 2.44159,-0.59918 5.16231,-0.69553 7.79492,-0.28906 l 6.2832,-24.42774 c -2.77392,-0.55169 -5.60196,-0.81821 -8.42578,-0.76562 z m 39.37305,55.22656 -25.25586,1.05078 c -1.08004,7.71125 -2.87922,15.41314 -3.83789,23.08203 -1.93159,10.24703 -1.91788,20.79813 -0.4961,31.32618 l 25.5625,-7.17579 c -0.57618,-9.28115 -0.13502,-18.63159 0.79688,-27.88867 1.24624,-6.57966 2.50842,-13.46774 3.23047,-20.39453 z m -79.97266,32.58203 -24.53906,5.00782 c 3.08426,9.10461 7.0716,17.99912 10.59375,26.57617 3.08776,7.2062 6.87492,14.53362 9.94922,22.04687 l 24.89648,-4.57226 c -3.53239,-9.31868 -7.97446,-18.41298 -11.57422,-27.33789 -3.1045,-7.02597 -6.64028,-14.27462 -9.32617,-21.72071 z m -141.85352,48.79883 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 10.30166,5.70772 20.82251,11.34187 31.55859,16.58008 4.13867,-6.60483 8.71587,-14.28219 13.04688,-21.66211 -7.15175,-3.39803 -14.21299,-6.92946 -21.19727,-10.44336 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z m 86.9043,38.14844 -9.19922,23.38476 c 15.82077,4.51642 32.07269,7.28329 48.77149,7.37891 3.29031,-0.10406 6.64838,-0.56037 9.96093,-1.3457 l -6.35156,-24.34766 c -5.87615,1.11928 -12.41458,0.60761 -17.78711,0.0586 -8.63369,-1.01026 -17.08816,-2.79783 -25.39453,-5.1289 z"
+       id="tail.pattern.itchy"
+       inkscape:connector-curvature="0"
+       class="body.color.2" />
+  </g>
+  <g
+     class="layer-tail-pattern"
+     id="layer.tail.pattern.seeds"
+     inkscape:groupmode="layer"
+     style="display:inline"
+     sodipodi:insensitive="true">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.5;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 508.56836,284.44336 c -29.51418,1.33938 -55.77567,22.43529 -67.21875,49.11523 l 23.33789,9.07618 c 6.67497,-16.02297 21.85492,-27.84436 38.22852,-32.70899 8.00291,-1.96399 19.05672,1.32802 19.92578,10.7461 1.17611,6.67293 0.77963,13.35542 -0.1543,20.03124 l 25.67188,-6.00781 c 0.7187,-11.79004 -0.56388,-23.51221 -6.76172,-33.85547 -7.38321,-10.49942 -20.27065,-16.63411 -33.0293,-16.39648 z m 35.53906,82.63867 -26.44336,5.63477 c -1.55238,18.69327 2.64806,38.06298 9.69532,56.21679 15.17646,39.09475 4.87156,-0.20826 11.64648,-3.94726 5.42729,-2.99525 27.72077,37.25498 10.77148,-8.13867 -6.01759,-16.11633 -6.84822,-33.02657 -5.66992,-49.76563 z m -71.69726,16.02735 -26.3086,1.5039 c 2.53655,6.54753 5.35423,12.97 7.92188,19.22266 7.03333,16.41433 17.70359,33.45806 15.2832,51.89258 -4.70651,8.44977 -14.92787,9.56028 -24.10937,9.13281 l 16.43164,23.96289 c 15.17749,-3.30688 29.61932,-13.60014 32.4414,-29.49024 4.41753,-23.14923 -8.44536,-44.70861 -16.77539,-65.36132 -1.57416,-3.56258 -3.25498,-7.18982 -4.88476,-10.86328 z m -146.29493,37.9414 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 30.95014,17.14818 63.84445,33.69705 98.78906,40.47851 l 2.88477,-24.8164 c -27.55825,-5.89149 -53.38916,-18.67176 -78.26563,-31.1875 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z"
+       id="tail.pattern3.middle"
+       inkscape:connector-curvature="0"
+       class="body.color.2" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 508.56836,284.44336 c -16.02724,0.72733 -31.092,7.28761 -43.35156,17.39648 l 14.91601,20.28516 c 6.68424,-5.57919 14.58316,-9.76297 22.78321,-12.19922 5.16198,-1.2668 11.57975,-0.33232 15.72851,3.00781 l 21.83594,-13.57421 c -7.52001,-9.58761 -19.76899,-15.14219 -31.91211,-14.91602 z m 36.40625,113.55273 -25.08789,6.08203 c 1.75641,8.41536 4.32863,16.7565 7.47266,24.85547 15.17646,39.09475 4.87156,-0.20826 11.64648,-3.94726 5.42729,-2.99525 27.72077,37.25498 10.77148,-8.13867 -2.30929,-6.18475 -3.84171,-12.48735 -4.80273,-18.85157 z m -83.98828,21.07813 c 5.34633,11.72043 10.00193,23.84653 8.32031,36.6543 -0.56247,1.00983 -1.20513,1.91437 -1.91406,2.7246 l 17.53906,18.07227 c 4.59904,-4.63892 7.9329,-10.40213 9.13867,-17.19141 2.66171,-13.94816 -0.9623,-27.31653 -6.07617,-40.25976 l -27.00781,0 z m -134.8711,1.97656 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 24.26919,13.44655 49.73461,26.52089 76.44531,34.8125 l 2.77734,-25.46094 c -19.29932,-6.62554 -37.80808,-15.81767 -55.81445,-24.87695 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z"
+       id="tail.pattern3.front"
+       inkscape:connector-curvature="0"
+       class="body.color.2" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer.hair.below.itchy"
      class="layer-hair-below-itchy"
      style="display:none"
@@ -741,49 +794,17 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer13"
-     class="layer-tail-back"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     id="layer.clothes.top.potion.below"
+     class="layer-clothes-top-potion-below"
+     sodipodi:insensitive="true"
+     style="display:none">
     <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#d31568;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 508.56836,284.44336 c -30.75791,1.39582 -57.99427,24.24491 -68.5957,52.51367 -5.98363,23.18769 5.4633,45.96691 14.05078,66.87891 7.03333,16.41433 17.70359,33.45806 15.2832,51.89258 -5.91957,10.62762 -20.57004,9.65446 -30.89258,8.5996 -33.04243,-3.86648 -63.52441,-18.91546 -92.69531,-33.59179 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 40.08885,22.21156 83.43551,43.43204 130.28045,43.70027 18.02655,-0.57014 38.09716,-11.58436 41.47931,-30.62801 4.41753,-23.14923 -8.44474,-44.7081 -16.77477,-65.36081 -7.01981,-15.88693 -16.26301,-32.90613 -12.83656,-50.79544 6.55479,-16.30011 21.89819,-28.33228 38.45704,-33.25195 8.00291,-1.96399 19.05672,1.32805 19.92578,10.7461 2.53571,14.38691 -2.20435,28.81802 -3.99368,43.13168 -4.0294,21.37588 0.33714,44.0725 8.51185,65.13064 15.17646,39.09475 4.87161,-0.208 11.64653,-3.947 5.42729,-2.99525 27.71928,37.25503 10.76999,-8.13862 -6.86012,-18.37279 -6.97825,-37.77858 -5.06493,-56.78474 3.66447,-19.34692 7.59915,-41.34557 -3.1139,-59.224 -7.38321,-10.49942 -20.27065,-16.63411 -33.0293,-16.39648 z"
-       id="tail.back"
+       class="clothes.top.1"
+       sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccsssccc"
-       class="body.color.1" />
-  </g>
-  <g
-     style="display:none"
-     class="layer-tail-pattern-itchy"
-     id="layer.tail.pattern.itchy"
-     inkscape:groupmode="layer"
-     sodipodi:insensitive="true">
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 508.56836,284.44336 c -17.04264,0.77341 -32.99695,8.14054 -45.64648,19.35937 l 14.91992,20.34375 c 7.13419,-6.59292 15.91417,-11.49923 25.07422,-14.2207 2.44159,-0.59918 5.16231,-0.69553 7.79492,-0.28906 l 6.2832,-24.42774 c -2.77392,-0.55169 -5.60196,-0.81821 -8.42578,-0.76562 z m 39.37305,55.22656 -25.25586,1.05078 c -1.08004,7.71125 -2.87922,15.41314 -3.83789,23.08203 -1.93159,10.24703 -1.91788,20.79813 -0.4961,31.32618 l 25.5625,-7.17579 c -0.57618,-9.28115 -0.13502,-18.63159 0.79688,-27.88867 1.24624,-6.57966 2.50842,-13.46774 3.23047,-20.39453 z m -79.97266,32.58203 -24.53906,5.00782 c 3.08426,9.10461 7.0716,17.99912 10.59375,26.57617 3.08776,7.2062 6.87492,14.53362 9.94922,22.04687 l 24.89648,-4.57226 c -3.53239,-9.31868 -7.97446,-18.41298 -11.57422,-27.33789 -3.1045,-7.02597 -6.64028,-14.27462 -9.32617,-21.72071 z m -141.85352,48.79883 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 10.30166,5.70772 20.82251,11.34187 31.55859,16.58008 4.13867,-6.60483 8.71587,-14.28219 13.04688,-21.66211 -7.15175,-3.39803 -14.21299,-6.92946 -21.19727,-10.44336 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z m 86.9043,38.14844 -9.19922,23.38476 c 15.82077,4.51642 32.07269,7.28329 48.77149,7.37891 3.29031,-0.10406 6.64838,-0.56037 9.96093,-1.3457 l -6.35156,-24.34766 c -5.87615,1.11928 -12.41458,0.60761 -17.78711,0.0586 -8.63369,-1.01026 -17.08816,-2.79783 -25.39453,-5.1289 z"
-       id="tail.pattern.itchy"
-       inkscape:connector-curvature="0"
-       class="body.color.2" />
-  </g>
-  <g
-     class="layer-tail-pattern"
-     id="layer.tail.pattern.seeds"
-     inkscape:groupmode="layer"
-     style="display:inline"
-     sodipodi:insensitive="true">
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.5;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 508.56836,284.44336 c -29.51418,1.33938 -55.77567,22.43529 -67.21875,49.11523 l 23.33789,9.07618 c 6.67497,-16.02297 21.85492,-27.84436 38.22852,-32.70899 8.00291,-1.96399 19.05672,1.32802 19.92578,10.7461 1.17611,6.67293 0.77963,13.35542 -0.1543,20.03124 l 25.67188,-6.00781 c 0.7187,-11.79004 -0.56388,-23.51221 -6.76172,-33.85547 -7.38321,-10.49942 -20.27065,-16.63411 -33.0293,-16.39648 z m 35.53906,82.63867 -26.44336,5.63477 c -1.55238,18.69327 2.64806,38.06298 9.69532,56.21679 15.17646,39.09475 4.87156,-0.20826 11.64648,-3.94726 5.42729,-2.99525 27.72077,37.25498 10.77148,-8.13867 -6.01759,-16.11633 -6.84822,-33.02657 -5.66992,-49.76563 z m -71.69726,16.02735 -26.3086,1.5039 c 2.53655,6.54753 5.35423,12.97 7.92188,19.22266 7.03333,16.41433 17.70359,33.45806 15.2832,51.89258 -4.70651,8.44977 -14.92787,9.56028 -24.10937,9.13281 l 16.43164,23.96289 c 15.17749,-3.30688 29.61932,-13.60014 32.4414,-29.49024 4.41753,-23.14923 -8.44536,-44.70861 -16.77539,-65.36132 -1.57416,-3.56258 -3.25498,-7.18982 -4.88476,-10.86328 z m -146.29493,37.9414 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 30.95014,17.14818 63.84445,33.69705 98.78906,40.47851 l 2.88477,-24.8164 c -27.55825,-5.89149 -53.38916,-18.67176 -78.26563,-31.1875 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z"
-       id="tail.pattern3.middle"
-       inkscape:connector-curvature="0"
-       class="body.color.2" />
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 508.56836,284.44336 c -16.02724,0.72733 -31.092,7.28761 -43.35156,17.39648 l 14.91601,20.28516 c 6.68424,-5.57919 14.58316,-9.76297 22.78321,-12.19922 5.16198,-1.2668 11.57975,-0.33232 15.72851,3.00781 l 21.83594,-13.57421 c -7.52001,-9.58761 -19.76899,-15.14219 -31.91211,-14.91602 z m 36.40625,113.55273 -25.08789,6.08203 c 1.75641,8.41536 4.32863,16.7565 7.47266,24.85547 15.17646,39.09475 4.87156,-0.20826 11.64648,-3.94726 5.42729,-2.99525 27.72077,37.25498 10.77148,-8.13867 -2.30929,-6.18475 -3.84171,-12.48735 -4.80273,-18.85157 z m -83.98828,21.07813 c 5.34633,11.72043 10.00193,23.84653 8.32031,36.6543 -0.56247,1.00983 -1.20513,1.91437 -1.91406,2.7246 l 17.53906,18.07227 c 4.59904,-4.63892 7.9329,-10.40213 9.13867,-17.19141 2.66171,-13.94816 -0.9623,-27.31653 -6.07617,-40.25976 l -27.00781,0 z m -134.8711,1.97656 c -10.88771,2.45839 -14.48941,20.12357 -3.80468,25.21094 24.26919,13.44655 49.73461,26.52089 76.44531,34.8125 l 2.77734,-25.46094 c -19.29932,-6.62554 -37.80808,-15.81767 -55.81445,-24.87695 -6.44554,-3.18615 -12.59588,-8.53796 -19.60352,-9.68555 z"
-       id="tail.pattern3.front"
-       inkscape:connector-curvature="0"
-       class="body.color.2" />
+       id="clothes.top.potion.below"
+       d="m 234.22656,256.91992 c -3.58111,13.36489 -24.97124,102.4881 -24.84961,143.12108 77.08008,8.14454 153.66016,8.98221 231.24024,0 0.12163,-40.63297 -21.2685,-129.76009 -24.84961,-143.12498 z"
+       style="display:inline;opacity:1;fill:#1d0046;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -956,7 +977,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="layer.eyes.pupils.heart"
      class="layer-eyes-pupils-heart"
-     style="display:none">
+     style="display:none"
+     sodipodi:insensitive="true">
     <path
        sodipodi:nodetypes="cscsc"
        inkscape:connector-curvature="0"
@@ -975,7 +997,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   <g
      inkscape:groupmode="layer"
      id="layer9"
-     class="layer-mouth-nose">
+     class="layer-mouth-nose"
+     sodipodi:insensitive="true">
     <path
        id="mouth-nose"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1044,7 +1067,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="layer.clothes.top.seeds"
      class="layer-clothes-top-seeds"
-     style="display:inline"
+     style="display:inline;opacity:1"
      sodipodi:insensitive="true">
     <path
        style="opacity:1;fill:#fce1c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1125,6 +1148,20 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        y="405.80466"
        transform="matrix(-0.99253517,0.12195877,0.12195877,0.99253517,0,0)"
        class="clothes.top.2" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.potion"
+     class="layer-clothes-top-potion"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#1d0046;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 240.625,237.34766 c -1.41889,1.41889 -5.03227,14.47369 -6.39844,19.57226 -3.58111,13.36489 -24.97124,102.4881 -24.84961,143.12108 l 51.51758,2e-5 c 1.08532,-20.58926 -2.51507,-118.36503 9.01172,-138.33002 42.48872,-16.21777 77.17571,-10.14488 110.4375,0 11.93053,20.66429 7.69219,118.08932 8.75781,138.33002 l 51.51563,-2e-5 c 0.12163,-40.63297 -21.2685,-129.76009 -24.84961,-143.12498 -1.36593,-5.09772 -4.83025,-16.85218 -6.39844,-19.56836 -57.60809,13.51361 -111.13605,13.81748 -168.74414,0 z"
+       id="clothes.top.potion.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccccccscc"
+       class="clothes.top.1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1258,6 +1295,37 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer.clothes.bottom.potion"
+     class="layer-clothes-bottom-potion"
+     sodipodi:insensitive="true"
+     style="display:none">
+    <path
+       style="fill:#f7a8e5;fill-opacity:0.62745098;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 261.454,429.54622 c -5.00471,67.52906 -27.16108,171.7831 -22,204.58928 6.67483,42.42829 164.25366,42.2662 170.903,0 5.15812,-32.78737 -17.76939,-137.02809 -22,-204.58928 z"
+       id="clothes.bottom.potion.3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csscc"
+       class="clothes.bottom.2" />
+    <rect
+       style="opacity:1;fill:#272727;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.bottom.potion.1"
+       width="131.08578"
+       height="24.234171"
+       x="259.5"
+       y="417.6329"
+       class="clothes.bottom.1" />
+    <rect
+       style="opacity:1;fill:#272727;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.50018048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.bottom.potion.2"
+       width="13.828033"
+       height="83.686081"
+       x="324.89835"
+       y="381.27057"
+       transform="matrix(0.99315855,0.11677373,-0.1544133,0.98800634,0,0)"
+       class="clothes.bottom.1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer.clothes.top.itchy.above"
      class="layer-clothes-top-itchy-above"
      style="display:none"
@@ -1283,6 +1351,42 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        height="19.495243"
        x="316.5455"
        y="209.5"
+       class="clothes.top.2" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.potion.above"
+     class="layer-clothes-top-potion-above"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#fed6f0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 240.625,237.34766 c -1.41889,1.41889 -5.03227,14.47369 -6.39844,19.57226 -0.28969,1.08115 -0.66263,2.81538 -1.06836,4.82227 l 36.74219,0 c 0.002,-0.009 0.004,-0.0218 0.006,-0.0312 l 110.4375,0 c 0.002,0.009 0.004,0.0218 0.006,0.0312 l 36.48828,0 c -0.40605,-2.00879 -0.78043,-3.74433 -1.07031,-4.82617 -1.36593,-5.09772 -4.83025,-16.85218 -6.39844,-19.56836 z"
+       id="clothes.top.potion.above.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccccccscc"
+       class="clothes.top.2" />
+    <path
+       style="fill:#fed6f0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 311.0386,253.94207 C 289.6981,266.06917 268.81599,290.32708 267,306.5 c -1.62582,14.47931 38.67097,26.03666 40,18 2.74211,-16.58159 -1.64283,-40.48708 3.86182,-61.78496 z"
+       id="clothes.top.potion.above.3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csscc"
+       class="clothes.top.2" />
+    <path
+       style="fill:#fed6f0;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 339.25921,253.94179 c 21.3405,12.1271 42.22261,36.38501 44.0386,52.55793 1.62582,14.47931 -38.67097,26.03666 -40,18 -2.74211,-16.58159 1.64283,-40.48708 -3.86182,-61.78496 z"
+       id="clothes.top.potion.above.4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csscc"
+       class="clothes.top.2" />
+    <rect
+       style="opacity:1;fill:#fed6f0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.potion.above.2"
+       width="28.991379"
+       height="26.870058"
+       x="310.77344"
+       y="236.28693"
        class="clothes.top.2" />
   </g>
   <g
@@ -1323,7 +1427,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="layer.hair.above.bellith"
      class="layer-hair-above-bellith"
-     style="display:none">
+     style="display:none"
+     sodipodi:insensitive="true">
     <path
        style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 324.71094,60.013477 c -37.86794,8.3e-5 -54.14503,16.100545 -66.56446,37.611633 0.0137,0.38016 -1.96481,4.7602 -1.9355,5.14 l 21.06919,0 0.33309,-13.016799 0.16862,13.016799 10.25311,0 0.27941,-18.142872 0.22127,18.142872 14.12565,0 0.15494,-23.061383 0.40165,23.061383 16.09001,0 0.0203,-24.888298 0.48547,24.888298 13.35189,0 0.0936,-25.120899 0.44254,25.120899 12.42149,0 0.38439,-22.79489 0.26809,22.79489 13.79444,0 0.51202,-18.608073 0.0468,18.608073 10.32124,0 0.33308,-12.582237 0.20974,12.582237 21.19255,0 c 0.0378,-0.37973 -1.93231,-4.75977 -1.9102,-5.14 -11.95703,-20.710207 -28.6965,-37.611546 -66.56444,-37.611633 z"
