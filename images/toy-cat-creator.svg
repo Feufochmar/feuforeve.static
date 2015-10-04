@@ -34,14 +34,16 @@
   'hair-above': {
     'layers': [
       'layer.hair.above.seeds', 'layer.hair.above.itchy', 'layer.hair.above.bellith',
-      'layer.hair.above.id', 'layer.hair.above.misc', 'layer.hair.above.misc.2'
+      'layer.hair.above.id', 'layer.hair.above.misc', 'layer.hair.above.misc.2',
+      'layer.hair.above.broken'
     ],
     'idx': 0
   },
   'hair-below': {
     'layers': [
       'layer.none', 'layer.hair.below.itchy', 'layer.hair.below.bellith',
-      'layer.hair.below.id', 'layer.hair.below.misc', 'layer.hair.below.misc.2'
+      'layer.hair.below.id', 'layer.hair.below.misc', 'layer.hair.below.misc.2',
+      'layer.hair.below.broken'
     ],
     'idx': 0
   },
@@ -66,27 +68,29 @@
   'clothes-bottom': {
     'layers': [
       'layer.none', 'layer.clothes.bottom.seeds', 'layer.clothes.bottom.itchy',
-      'layer.clothes.bottom.potion', 'layer.clothes.bottom.misc.1'
+      'layer.clothes.bottom.potion', 'layer.clothes.bottom.misc.1',
+      'layer.clothes.bottom.broken'
     ],
     'idx': 1
   },
   'clothes-top': {
     'layers': [
       'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.none',
-      'layer.clothes.top.misc.1'
+      'layer.clothes.top.misc.1', 'layer.clothes.top.broken'
     ],
     'idx': 1
   },
   'clothes-top-above': {
     'layers': [
       'layer.none', 'layer.none', 'layer.clothes.top.itchy.above', 'layer.clothes.top.potion.above',
-      'layer.clothes.top.misc.1.above'
+      'layer.clothes.top.misc.1.above', 'layer.clothes.top.broken.above'
     ],
     'idx': 1
   },
   'clothes-top-below': {
     'layers': [
-      'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.potion.below', 'layer.none'
+      'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.potion.below', 'layer.none',
+      'layer.none'
     ],
     'idx': 1
   },
@@ -104,7 +108,7 @@
   },
   'hat': {
     'layers': [
-      'layer.none', 'layer.hat.itchy'
+      'layer.none', 'layer.hat.itchy', 'layer.hat.broken'
     ],
     'idx': 0
   }
@@ -120,24 +124,24 @@ function nextPattern(pat) {
 }</script>
   <script
      id="script.colors">var imageColors = {
-  'body.color.1': 'hsl(330, 90%, 30%)',
-  'body.color.2': 'hsl(0, 90%, 80%)',
-  'eye.white': 'hsl(0, 0%, 90%)',
-  'eye.pupil.left': 'hsl(270, 90%, 30%)',
+  'body.color.1': 'hsl(330, 83%, 50%)',
+  'body.color.2': 'hsl(0, 100%, 89%)',
+  'eye.white': 'hsl(0, 0%, 89%)',
+  'eye.pupil.left': 'hsl(270, 100%, 11%)',
   'eye.pupil.right': 'hsl(330, 60%, 55%)',
-  'hair': 'hsl(60, 60%, 80%)',
-  'underwear.bottom': 'hsl(270, 60%, 30%)',
-  'underwear.top': 'hsl(270, 60%, 30%)',
-  'clothes.bottom.1': 'hsl(330, 60%, 30%)',
-  'clothes.bottom.2': 'hsl(330, 60%, 30%)',
-  'clothes.top.1': 'hsl(30, 90%, 80%)',
-  'clothes.top.2': 'hsl(330, 60%, 30%)',
-  'socks.1': 'hsl(30, 90%, 80%)',
-  'socks.2': 'hsl(30, 90%, 80%)',
-  'shoes.1': 'hsl(330, 60%, 30%)',
-  'shoes.2': 'hsl(330, 60%, 30%)',
-  'hat.1': 'hsl(330, 90%, 55%)',
-  'hat.2': 'hsl(330, 90%, 55%)'
+  'hair': 'hsl(0, 100%, 89%)',
+  'underwear.bottom': 'hsl(270, 50%, 24%)',
+  'underwear.top': 'hsl(270, 50%, 24%)',
+  'clothes.bottom.1': 'hsl(0, 17%, 50%)',
+  'clothes.bottom.2': 'hsl(0, 17%, 50%)',
+  'clothes.top.1': 'hsl(30, 83%, 89%)',
+  'clothes.top.2': 'hsl(330, 33%, 37%)',
+  'socks.1': 'hsl(30, 83%, 89%)',
+  'socks.2': 'hsl(30, 83%, 89%)',
+  'shoes.1': 'hsl(330, 17%, 37%)',
+  'shoes.2': 'hsl(330, 17%, 37%)',
+  'hat.1': 'hsl(330, 100%, 50%)',
+  'hat.2': 'hsl(330, 100%, 50%)'
 };
 var colorPicker = {
   'class': 'body.color.1',
@@ -208,6 +212,8 @@ function initColors() {
   changeColorOfClass('socks.2');
   changeColorOfClass('shoes.1');
   changeColorOfClass('shoes.2');
+  changeColorOfClass('hat.1');
+  changeColorOfClass('hat.2');
 }</script>
   <defs
      id="defs4" />
@@ -218,11 +224,11 @@ function initColors() {
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="434.1338"
-     inkscape:cy="361.8229"
+     inkscape:zoom="0.76"
+     inkscape:cx="461.74812"
+     inkscape:cy="343.11135"
      inkscape:document-units="px"
-     inkscape:current-layer="layer.clothes.bottom.misc.1"
+     inkscape:current-layer="controls"
      showgrid="false"
      units="px"
      width="1000px"
@@ -305,8 +311,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="controls"
      class="controls"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:80.00000119%;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1611,6 +1616,19 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        class="hair" />
   </g>
   <g
+     style="display:none"
+     class="layer-hair-below-broken"
+     id="layer.hair.below.broken"
+     inkscape:groupmode="layer">
+    <path
+       class="hair"
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:connector-curvature="0"
+       id="hair.broken.below"
+       d="m 320.52407,188.5014 c -10.4401,2.71292 -18.46172,1.66596 -27.93791,4.6262 0.15174,-3.29825 -1.01467,-6.21701 -1.8447,-10.56095 -5.99034,2.86156 -8.95996,6.06949 -20.61883,6.48945 15.75763,-23.27813 -7.43866,-33.89418 -2.16637,-45.21409 l 124.47738,-9.91518 c -3.53964,22.01456 -27.78206,40.48915 -14.61077,54.46653 -8.88891,2.39389 -14.80909,-0.0618 -20.28153,-3.7204 0,0 -1.00047,4.79104 -0.57189,8.1515 -12.84789,-3.55936 -19.77805,-2.35209 -27.60656,-3.85786 z"
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.clothes.top.potion.below"
      class="layer-clothes-top-potion-below"
@@ -1626,9 +1644,10 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer10"
-     class="layer-ear-left-back"
-     sodipodi:insensitive="true">
+     id="layer.ear.left"
+     class="layer-ear-left"
+     sodipodi:insensitive="true"
+     style="display:inline">
     <path
        style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 372.29504,119.34582 c 20.92897,-13.10835 47.74013,-22.611466 40.29661,-63.460497 -29.68754,-5.252019 -50.67587,14.622366 -66.6147,35.648983"
@@ -1636,12 +1655,6 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc"
        class="body.color.2" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer11"
-     class="layer-ear-left-front"
-     sodipodi:insensitive="true">
     <path
        style="fill:#d31568;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 405.70112,62.562713 c 0,0 -19.52713,-3.676029 -23.75141,7.34083 -2.37918,6.204793 7.68973,9.437653 7.68973,9.437653 0,0 3.6855,9.893385 9.75385,7.262121 10.82507,-4.693798 6.30783,-24.040604 6.30783,-24.040604 z"
@@ -1651,9 +1664,10 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        class="body.color.1" />
   </g>
   <g
-     class="layer-ear-right-back"
-     id="g4359"
+     class="layer-ear-right"
+     id="layer.ear.right"
      inkscape:groupmode="layer"
+     style="display:inline"
      sodipodi:insensitive="true">
     <path
        sodipodi:nodetypes="ccc"
@@ -1662,19 +1676,12 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        d="m 277.59178,119.34582 c -20.92897,-13.10835 -47.74013,-22.611466 -40.29661,-63.460497 29.68754,-5.252019 50.67587,14.622366 66.6147,35.648983"
        style="fill:#d31568;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        class="body.color.1" />
-  </g>
-  <g
-     class="layer-ear-right-front"
-     id="g4363"
-     inkscape:groupmode="layer"
-     style="display:inline"
-     sodipodi:insensitive="true">
     <path
        sodipodi:nodetypes="cscsc"
        inkscape:connector-curvature="0"
        id="ear.right.front"
        d="m 243.66197,61.675242 c 0,0 20.97768,-3.949092 25.51576,7.886122 2.55591,6.665698 -8.26095,10.138702 -8.26095,10.138702 0,0 -3.95928,10.628286 -10.47841,7.801566 -11.62919,-5.042463 -6.7764,-25.82639 -6.7764,-25.82639 z"
-       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        class="body.color.2" />
   </g>
   <g
@@ -1717,7 +1724,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer6"
+     id="layer.eye.spot.heart"
      class="layer-eye-spot-heart"
      style="display:inline"
      sodipodi:insensitive="true">
@@ -1819,7 +1826,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      sodipodi:insensitive="true">
     <path
        id="mouth-nose"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 316.68934,155 c 0,0 4.88098,5.52156 8.125,5.375 2.93177,-0.13246 6.875,-5.5 6.875,-5.5 m -7,13.625 0,-8.75 m 18.59066,8.644 c 0,0 -6.05177,6.51577 -10,6.36423 -3.53311,-0.1356 -8.48575,-6.36423 -8.48575,-6.36423 0,0 -5.84758,5.61988 -9.54625,5.65712 -3.82956,0.0386 -10,-5.65712 -10,-5.65712"
        inkscape:connector-curvature="0"
        class=""
@@ -2095,6 +2102,26 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        class="clothes.top.2" />
   </g>
   <g
+     style="display:none;opacity:1"
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.broken"
+     class="layer-clothes-top-broken"
+     sodipodi:insensitive="true">
+    <path
+       class="clothes.top.1"
+       sodipodi:nodetypes="cssssscccscsccccscsccssssssccc"
+       inkscape:connector-curvature="0"
+       id="clothes.top.broken.1"
+       d="m 308.818,199.9375 c -2.43043,0.33881 -10.70586,1.46023 -22.52698,3.57617 -6.71609,1.20216 -13.75142,2.58934 -19.80274,4.06641 -6.05132,1.47707 -10.9466,2.86349 -14.26367,4.83789 -6.8966,4.10503 -10.12127,12.37914 -12.53125,20.86914 -2.40998,8.49 -4.13321,17.50548 -5.4668,23.63281 -7.60945,34.96258 -14.78557,75.65999 -14.96679,108.91406 0.10541,35.22293 6.23219,95.533 6.87109,105.31055 l 22.30078,-1.69531 c 1.37287,-37.46563 2.90688,-63.75901 4.33596,-100.88867 0.75145,-19.52374 6.15509,-64.04565 11.13867,-86.84961 1.47732,18.95836 3.3125,56.93185 3.3125,76.25195 0,21.67285 -4.32124,45.78275 -7.04687,71.60547 -0.22117,2.09689 1.42273,3.92353 3.53124,3.92383 l 122.83008,0 c 2.09116,-5e-4 3.7292,-1.79872 3.53516,-3.88086 -2.41291,-25.81611 -6.29102,-49.953 -6.29102,-71.65039 0,-18.74139 1.38819,-55.85832 2.56641,-74.9668 4.90932,22.7415 10.3998,66.36666 10.88281,85.5625 0.94134,37.41106 3.48897,63.36222 4.33807,101.00391 l 22.29297,1.69336 c 1.91767,-39.14984 6.66066,-66.9091 6.75979,-105.42579 0.10458,-40.63302 -11.2685,-95.54721 -14.84961,-108.9121 -1.623,-6.05711 -3.05682,-15.14281 -5.4668,-23.63282 -2.40998,-8.49 -5.63464,-16.76411 -12.53125,-20.86914 -3.31707,-1.9744 -8.21235,-3.36082 -14.26367,-4.83789 -6.05132,-1.47707 -13.08663,-2.86425 -19.80274,-4.0664 -11.82112,-2.11595 -20.09691,-3.23737 -22.52734,-3.57618 L 324.997,237.827 Z"
+       style="opacity:1;fill:#414e9d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       style="display:inline;opacity:1;fill:#632994;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 224.67773,454.07617 c 0.72261,8.24242 1.28434,14.48529 1.45313,17.06836 l 22.30078,-1.69531 c 0.20026,-5.46502 0.4109,-10.31515 0.61719,-15.37305 l -24.3711,0 z m 176.42188,0 c 0.18169,4.98175 0.34318,10.09068 0.46484,15.48438 l 22.29297,1.69336 c 0.29256,-5.97263 0.65714,-11.65668 1.05469,-17.17774 l -23.8125,0 z"
+       id="clothes.top.broken.2"
+       class="clothes.top.2"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.clothes.bottom.seeds"
      class="layer-clothes-bottom-seeds"
@@ -2206,6 +2233,57 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="clothes.bottom.misc.1.3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cscsc"
+       class="clothes.bottom.2" />
+  </g>
+  <g
+     style="display:none;opacity:1"
+     class="layer-clothes-bottom-broken"
+     id="layer.clothes.bottom.broken"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#512a7e;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 260.51172,426.16406 c -0.83812,9.65703 -2.84584,19.54246 -3.20703,29.67774 -1.27449,35.76301 1.18901,83.20823 3.80859,124.51758 1.37362,21.66114 4.79179,55.12089 7.23047,78.0039 l 9.09424,6 9.09424,-6 9.09423,6 9.09424,-6 c -0.81558,-19.5311 -1.66359,-48.2851 -1.35742,-77.13672 0.27395,-25.81499 2.43167,-52.16856 4.74024,-72.97265 2.30856,-20.8041 4.8863,-36.53583 5.57617,-39.51368 0.54303,-2.34402 2.1329,-4.39807 4.33789,-5.91796 2.20499,-1.5199 4.97846,-2.35234 6.99023,-2.35157 2.00841,6.5e-4 4.7764,0.83256 6.97657,2.35157 2.20015,1.519 3.78713,3.57238 4.33007,5.91601 0.68989,2.97793 3.26764,18.70812 5.57617,39.51172 2.30857,20.8036 4.46629,43.15766 4.74024,68.97266 0.3062,28.85357 -0.54223,61.60925 -1.35742,81.14062 l 9.09424,6 9.09424,-6 9.09423,6 9.09424,-6 c 2.43869,-22.88301 5.85677,-56.34549 7.23047,-78.00781 2.62049,-41.3236 4.88385,-88.77952 3.8125,-124.49414 -0.30405,-10.13567 -2.20667,-20.02823 -2.92616,-29.69727 z"
+       id="clothes.bottom.broken.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csscccccsssscsssscccccsscc"
+       class="clothes.bottom.1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 291.22897,426.0313 c -0.82909,20.59105 -6.36815,37.94042 -34.03442,40.06055"
+       id="path4941"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 359.04701,426.03118 c 0.82909,20.59105 6.36815,37.94042 34.03442,40.06055"
+       id="path4941-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 290.07951,436.57493 70.06641,0"
+       id="path4958"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 314.0659,467.59923 297.48393,436.45575"
+       id="path4960"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 335.84914,467.59951 16.58197,-31.14348"
+       id="path4960-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:1;fill:#f8cbfa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.bottom.broken.2"
+       width="5.3033009"
+       height="3.5355339"
+       x="321.38004"
+       y="440.16592"
        class="clothes.bottom.2" />
   </g>
   <g
@@ -2328,6 +2406,47 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer.clothes.top.broken.above"
+     class="layer-clothes-top-broken-above"
+     sodipodi:insensitive="true"
+     style="display:none">
+    <path
+       style="opacity:1;fill:#414e9d;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 341.46875,195.75587 -16.52344,40.83789 -16.52148,-40.83593 -25.65625,8.33789 29.29687,43.8164 25.76367,0 29.29688,-43.8164 z"
+       id="clothes.top.broken.above.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc"
+       class="clothes.top.1" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 336.29813,243.2789 0,52.33521 m -22.70929,0 0,-52.33521"
+       id="rect5072"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       class="clothes.top.2"
+       sodipodi:nodetypes="cscsc"
+       inkscape:connector-curvature="0"
+       id="clothes.top.broken.above.2"
+       d="m 324.92933,261.5731 c 0,0 -20.70953,-13.26262 -13.91301,-25.03454 4.85904,-8.4161 13.92178,0.27675 13.92178,0.27675 0,0 9.20649,-8.40702 13.90527,-0.26849 6.79652,11.77192 -13.91404,25.02628 -13.91404,25.02628 z"
+       style="display:inline;fill:#632994;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       class="clothes.top.2"
+       sodipodi:nodetypes="cscsc"
+       inkscape:connector-curvature="0"
+       id="clothes.top.broken.above.3"
+       d="m 313.65106,293.52243 c 0,0 -11.11686,7.11287 -7.46849,13.42627 2.60833,4.51364 7.4732,-0.14842 7.4732,-0.14842 0,0 4.94203,4.50877 7.46433,0.14399 3.64837,-6.3134 -7.46904,-13.42184 -7.46904,-13.42184 z"
+       style="display:inline;fill:#632994;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       class="clothes.top.2"
+       sodipodi:nodetypes="cscsc"
+       inkscape:connector-curvature="0"
+       id="clothes.top.broken.above.4"
+       d="m 336.34843,293.52212 c 0,0 -11.11686,7.11287 -7.46849,13.42627 2.60833,4.51364 7.4732,-0.14842 7.4732,-0.14842 0,0 4.94203,4.50877 7.46433,0.14399 3.64837,-6.3134 -7.46904,-13.42184 -7.46904,-13.42184 z"
+       style="display:inline;fill:#632994;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer.hair.above.seeds"
      class="layer-hair-above"
      style="display:inline"
@@ -2421,6 +2540,27 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
+     style="display:none"
+     class="layer-hair-above-broken"
+     id="layer.hair.above.broken"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 316.47904,45.976047 c 3.01186,-7.412025 5.79142,-7.480191 9.59153,-11.149781 0.23166,4.044038 0.86822,7.21637 3.82171,11.895552 1.84039,-1.601197 5.16473,-5.137074 8.87234,-3.760325 -2.976,2.586746 -0.69321,5.672752 0.9995,10.006905 2.8424,-2.115955 6.69755,-3.033551 12.02024,-0.406566 -7.79925,6.556858 3.30919,10.431838 5.54857,21.920553 l -68.61434,1.183902 c 4.21816,-10.419547 13.81334,-11.682329 6.0867,-24.235136 3.43631,0.11533 7.69535,-0.47925 11.45487,1.725992 2.4041,-4.12044 2.3405,-6.833714 1.06741,-9.620048 2.72512,-0.814713 5.50311,-1.364962 9.15147,2.438952 z"
+       id="hair.broken.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc"
+       class="hair" />
+    <path
+       class="hair"
+       sodipodi:nodetypes="sssccccccccssccccccscccccccss"
+       inkscape:connector-curvature="0"
+       id="hair.broken.1"
+       d="m 325.50977,60.632812 c -37.79513,-1.45e-4 -69.99855,18.645978 -78.01357,61.615958 -2.50071,13.40674 -4.4692,28.35743 -5.23274,44.65818 -0.3147,6.71847 -0.95056,13.82718 -10.9119,17.59891 14.02314,1.27151 19.83089,1.94564 26.36328,-11.91016 0.54574,6.81117 1.07396,10.52329 -4.43554,19.75977 8.14323,-3.62379 11.99741,-7.61684 13.89453,-13.34375 5.71799,4.79397 12.29733,8.93095 19.62305,12.20703 -2.74091,-3.24731 -5.15797,-6.81381 -7.24415,-10.61523 -3.98935,-8.47113 -4.50406,-14.59907 -4.62078,-19.39711 6.61978,0.28667 14.7642,2.20969 20.65985,-1.81383 0,0 -12.18427,-1.91173 -15.89258,-8.1211 -10.25107,-17.16489 -6.18128,-34.7147 5.01758,-47.7539 6.18082,-7.19653 10.23815,-10.444063 18.52418,-12.570226 l 1.65676,16.015216 16.42501,-15.55899 5.05881,24.79633 15.30507,-25.95026 c 13.79872,0.985554 17.76221,4.559795 25.69814,10.82066 7.60123,8.64319 10.05389,19.88821 10.25781,33.44727 0.26568,17.66551 0.0611,40.92098 -14.29102,57.12304 5.10523,-2.2178 9.85778,-4.85017 14.22071,-7.83007 1.64202,3.79307 8.26286,9.68673 12.93945,8.54492 -2.16457,-6.63776 -1.00235,-8.62805 0.42773,-15.33789 4.29635,7.30695 9.90062,11.87036 17.5625,11.7832 -4.15175,-6.98937 -7.56034,-14.04745 -8.2539,-21.9375 9.37977,7.45837 17.44336,1.20508 17.44336,1.20508 -12.547,-14.30136 -12.09073,-22.77441 -13.35938,-41.5625 -2.48409,-36.78824 -34.77108,-65.873213 -78.82226,-65.873048 z"
+       style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.hat.itchy"
      class="layer-hat-itchy"
@@ -2447,5 +2587,19 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="path4467-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="zccccz" />
+  </g>
+  <g
+     style="display:none"
+     class="layer-hat-broken"
+     id="layer.hat.broken"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       class="hat.1"
+       sodipodi:nodetypes="cscsc"
+       inkscape:connector-curvature="0"
+       id="hat.broken"
+       d="m 325.22846,72.015145 c 0,0 -14.23844,-9.28034 -10.32873,-18.581593 2.20199,-5.238549 10.33525,-1.27906 10.33525,-1.27906 0,0 8.13127,-3.92894 10.32298,1.285185 3.90972,9.301253 -10.3295,18.575468 -10.3295,18.575468 z"
+       style="fill:#632994;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
