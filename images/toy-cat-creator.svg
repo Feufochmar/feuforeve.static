@@ -35,7 +35,7 @@
     'layers': [
       'layer.hair.above.seeds', 'layer.hair.above.itchy', 'layer.hair.above.bellith',
       'layer.hair.above.id', 'layer.hair.above.misc', 'layer.hair.above.misc.2',
-      'layer.hair.above.broken'
+      'layer.hair.above.broken','layer.hair.above.fluffy.kiriban'
     ],
     'idx': 0
   },
@@ -43,7 +43,7 @@
     'layers': [
       'layer.none', 'layer.hair.below.itchy', 'layer.hair.below.bellith',
       'layer.hair.below.id', 'layer.hair.below.misc', 'layer.hair.below.misc.2',
-      'layer.hair.below.broken'
+      'layer.hair.below.broken','layer.hair.below.fluffy.kiriban'
     ],
     'idx': 0
   },
@@ -69,28 +69,29 @@
     'layers': [
       'layer.none', 'layer.clothes.bottom.seeds', 'layer.clothes.bottom.itchy',
       'layer.clothes.bottom.potion', 'layer.clothes.bottom.misc.1',
-      'layer.clothes.bottom.broken'
+      'layer.clothes.bottom.broken', 'layer.clothes.bottom.fluffy.kiriban'
     ],
     'idx': 1
   },
   'clothes-top': {
     'layers': [
       'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.none',
-      'layer.clothes.top.misc.1', 'layer.clothes.top.broken'
+      'layer.clothes.top.misc.1', 'layer.clothes.top.broken', 'layer.none'
     ],
     'idx': 1
   },
   'clothes-top-above': {
     'layers': [
       'layer.none', 'layer.none', 'layer.clothes.top.itchy.above', 'layer.clothes.top.potion.above',
-      'layer.clothes.top.misc.1.above', 'layer.clothes.top.broken.above'
+      'layer.clothes.top.misc.1.above', 'layer.clothes.top.broken.above',
+      'layer.clothes.top.fluffy.kiriban.above'
     ],
     'idx': 1
   },
   'clothes-top-below': {
     'layers': [
       'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.potion.below', 'layer.none',
-      'layer.none'
+      'layer.none', 'layer.none'
     ],
     'idx': 1
   },
@@ -224,11 +225,11 @@ function initColors() {
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.76"
-     inkscape:cx="461.74812"
-     inkscape:cy="343.11135"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="265.99453"
+     inkscape:cy="301.29352"
      inkscape:document-units="px"
-     inkscape:current-layer="controls"
+     inkscape:current-layer="toy.cat.creator.by.feufochmar.based.on.glip.floraverse"
      showgrid="false"
      units="px"
      width="1000px"
@@ -1619,7 +1620,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      style="display:none"
      class="layer-hair-below-broken"
      id="layer.hair.below.broken"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <path
        class="hair"
        sodipodi:nodetypes="ccccccccccc"
@@ -1627,6 +1629,20 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="hair.broken.below"
        d="m 320.52407,188.5014 c -10.4401,2.71292 -18.46172,1.66596 -27.93791,4.6262 0.15174,-3.29825 -1.01467,-6.21701 -1.8447,-10.56095 -5.99034,2.86156 -8.95996,6.06949 -20.61883,6.48945 15.75763,-23.27813 -7.43866,-33.89418 -2.16637,-45.21409 l 124.47738,-9.91518 c -3.53964,22.01456 -27.78206,40.48915 -14.61077,54.46653 -8.88891,2.39389 -14.80909,-0.0618 -20.28153,-3.7204 0,0 -1.00047,4.79104 -0.57189,8.1515 -12.84789,-3.55936 -19.77805,-2.35209 -27.60656,-3.85786 z"
        style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.hair.below.fluffy.kiriban"
+     class="layer-hair-below-fluffy-kiriban"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 309.86129,94.328877 c -18.36768,2.868202 -47.7466,12.016273 -48.63918,32.639203 -0.6521,15.06664 -4.34568,32.73935 16.70966,56.96829 21.05535,24.22894 64.15488,22.81256 89.70922,23.09919 33.40241,0.37466 62.25147,-12.41274 62.21721,-49.7245 -6.41203,10.38978 -13.64419,12.99174 -20.42949,12.63683 -5.29388,-0.2769 -26.70098,-4.47767 -29.72061,-13.38003 -6.08631,-17.94342 -14.44369,-31.72729 -28.85482,-44.27531 -13.40173,-11.66912 -22.66621,-18.295156 -40.99199,-17.963673 z"
+       id="hair.below.fluffy.kiriban"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cszscsssc"
+       class="hair" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2287,6 +2303,101 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        class="clothes.bottom.2" />
   </g>
   <g
+     style="display:none;opacity:1"
+     class="layer-clothes-bottom-fluffy-kiriban"
+     id="layer.clothes.bottom.fluffy.kiriban"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#29348a;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 259.18555,426.66602 c -0.81917,9.49755 -1.52597,19.21714 -1.88086,29.17578 -1.27449,35.76301 1.18901,83.20823 3.80859,124.51758 1.37362,21.66114 4.79179,59.12089 7.23047,82.0039 l 36.37695,0 c -0.81558,-19.5311 -1.66359,-52.2851 -1.35742,-81.13672 0.27395,-25.81499 2.43167,-52.16856 4.74024,-72.97265 2.30856,-20.8041 4.8863,-36.53583 5.57617,-39.51368 0.54303,-2.34402 2.1329,-4.39807 4.33789,-5.91796 2.20499,-1.5199 4.97846,-2.35234 6.99023,-2.35157 2.00841,6.5e-4 4.7764,0.83256 6.97657,2.35157 2.20015,1.519 3.78713,3.57238 4.33007,5.91601 0.68989,2.97793 3.26764,18.70812 5.57617,39.51172 2.30857,20.8036 4.46629,47.15766 4.74024,72.97266 0.3062,28.85357 -0.54223,61.60925 -1.35742,81.14062 l 36.37695,0 c 2.43869,-22.88301 5.85677,-60.34549 7.23047,-82.00781 2.62049,-41.3236 4.88385,-88.77952 3.8125,-124.49414 -0.29875,-9.95925 -0.90229,-19.68591 -1.60547,-29.19531 l -131.90234,0 z"
+       id="clothes.bottom.fluffy.kiriban.1"
+       inkscape:connector-curvature="0"
+       class="clothes.bottom.1" />
+    <path
+       style="display:inline;opacity:1;fill:#75d46f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 302.57422,457.14258 -6.19727,23.7539 -9.20703,-12.10156 -3.6543,23.88281 -10.08984,-15.38671 -3.90625,28.65429 -12.43164,-14.3164 c 0.0428,2.57886 0.0937,5.1817 0.15625,7.80468 l 15.73633,18.12305 3.59375,-26.34766 9.91016,15.11524 3.84374,-25.11914 8.29297,10.89844 5.80469,-22.2461 7.10547,11.74024 c 0.4539,-3.06574 0.85582,-5.58785 1.20313,-7.66993 l -10.16016,-16.78515 z m 45.71484,0 -10.84961,17.92578 c 0.35665,2.18066 0.73993,4.59637 1.19141,7.6875 l 7.80664,-12.89844 5.80469,22.2461 8.29297,-10.89844 3.84375,25.11914 9.91015,-15.11524 3.59375,26.34766 14.75,-16.98828 c 0.0643,-2.62572 0.12165,-5.23377 0.16797,-7.81641 l -11.45703,13.19336 -3.90625,-28.65429 -10.08984,15.38671 -3.6543,-23.88281 -9.20703,12.10156 -6.19727,-23.7539 z m -43.50195,17.63086 -5.67383,21.40429 -7.96094,-10.08593 -3.87695,25.20312 -9.83398,-15.1289 -3.4375,24.85546 -16.66407,-18.29296 c 0.14733,5.5353 0.33373,11.13674 0.55274,16.79101 l 1.69922,-6.89453 17.90234,19.6543 3.0625,-22.14258 9.66797,14.86914 4.12305,-26.79688 7.03711,8.91407 5.32812,-20.09766 3.33789,5.20117 c 0.36185,-2.74378 0.71019,-5.2699 1.04688,-7.62304 l -6.31055,-9.83008 z m 41.28906,0 -7.02344,10.93945 c 0.33578,2.37617 0.68145,4.88831 1.03907,7.63281 l 4.05859,-6.32031 5.32813,20.09766 7.0371,-8.91407 4.12305,26.79688 9.66797,-14.86914 3.0625,22.14258 17.90234,-19.6543 0.89063,3.61523 c 0.14852,-4.18568 0.26216,-8.31107 0.37305,-12.42773 l -15.67578,17.20898 -3.4375,-24.85546 -9.83399,15.1289 -3.87695,-25.20312 -7.96094,10.08593 -5.67383,-21.40429 z m -38.72656,15.49414 -5.4707,20.82031 -6.6211,-8.47656 -4.27148,24.87305 -9.57031,-11.83594 -3.26954,20.87695 -17.44726,-20.83789 -2.56641,9.63867 c 0.23286,5.51251 0.48928,11.02463 0.76953,16.54883 l 4.15039,-15.58984 18.33008,21.89257 3.23047,-20.62304 9.43164,11.66406 4.22852,-24.62695 5.87695,7.52343 4.19727,-15.96484 c 0.47378,-4.16606 0.95218,-8.13749 1.42382,-11.79492 l -2.42187,-4.08789 z m 36.16406,0 -3.14062,5.29883 c 0.32913,2.58354 0.65926,5.30461 0.99023,8.13671 l 0.35352,-0.5957 4.99609,19.00781 5.87695,-7.52343 4.22852,24.62695 9.43164,-11.66406 3.23047,20.62304 18.33008,-21.89257 3.38281,12.70703 c 0.26739,-5.584 0.50913,-11.14916 0.72656,-16.70703 l -1.75586,-6.59766 -17.44726,20.83789 -3.26953,-20.87695 -9.57032,11.83594 -4.27148,-24.87305 -6.62109,8.47656 -5.47071,-20.82031 z m -55.73437,64.04492 -3.23047,20.62305 -9.43164,-11.66407 -4.22852,24.62696 -5.87695,-7.52344 -3.07227,11.68555 c 0.35729,4.74622 0.76231,9.80721 1.20508,15.0957 l 4.13867,-15.75391 6.6211,8.47657 4.27148,-24.87305 9.57031,11.83594 3.26953,-20.87696 12.35743,14.75977 c 0.0293,-2.53443 0.0828,-5.07304 0.14648,-7.61133 L 287.7793,554.3125 Z m 75.30273,0 -16.58789,19.8125 c 0.0553,2.36714 0.11165,4.73488 0.13672,7.09766 0.002,0.17147 0.002,0.34973 0.004,0.52148 l 13.21093,-15.7793 3.26953,20.87696 9.57032,-11.83594 4.27148,24.87305 6.62109,-8.47657 3.47852,13.23828 c 0.43808,-5.30601 0.84979,-10.45391 1.19336,-15.13671 l -2.40039,-9.12891 -5.87695,7.52344 -4.22852,-24.62696 -9.43164,11.66407 -3.23047,-20.62305 z m -71.41406,15.89844 -3.0625,22.14258 -9.66797,-14.86914 -4.12305,26.79687 -7.03711,-8.91406 -4.26953,16.10547 c 0.41443,4.84338 0.8555,9.68787 1.30274,14.60351 l 5.23828,-19.76367 7.96094,10.08594 3.87695,-25.20313 9.83398,15.12891 3.4375,-24.85547 8.15235,8.94922 c 0.007,-2.47908 0.0212,-4.93983 0.043,-7.37891 L 291.668,570.21094 Z m 67.52539,0 -12.54688,13.77539 c 0.0197,2.44554 0.0383,4.89599 0.043,7.3789 l 9.01367,-9.89648 3.4375,24.85547 9.83399,-15.12891 3.87695,25.20313 7.96094,-10.08594 4.5957,17.33789 c 0.44542,-4.94249 0.88133,-9.82894 1.28907,-14.65234 l -3.61329,-13.63086 -7.0371,8.91406 -4.12305,-26.79687 -9.66797,14.86914 -3.0625,-22.14258 z m -63.01172,14.72265 -3.59375,26.34766 -9.91016,-15.11523 -3.84375,25.11914 -8.29296,-10.89844 -5.30079,20.3164 c 0.46242,4.99403 0.91397,9.8575 1.37305,14.54883 l 6.17188,-23.6582 9.20703,12.10156 3.65429,-23.88281 10.08985,15.38672 3.90625,-28.6543 3.68164,4.24024 c -0.0126,-2.55356 -0.0228,-5.10736 -0.0215,-7.64844 l -7.12109,-8.20313 z m 58.49805,0 -7.99219,9.20508 c -6.3e-4,2.54412 -0.007,5.09471 -0.0215,7.64844 l 4.55273,-5.24219 3.90625,28.6543 10.08984,-15.38672 3.6543,23.88281 9.20703,-12.10156 5.54688,21.26172 c 0.45394,-4.68681 0.90512,-9.67695 1.35742,-14.60742 l -4.66016,-17.86133 -8.29297,10.89844 -3.84375,-25.11914 -9.91015,15.11523 -3.59375,-26.34766 z"
+       id="clothes.bottom.fluffy.kiriban.2"
+       inkscape:connector-curvature="0"
+       class="clothes.bottom.2" />
+    <path
+       style="display:inline;opacity:1;fill:#29348a;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 266.75504,646.49926 c -1.39196,0 -1.67743,2.12545 -1.57032,4.76557 0.0848,2.0903 0.86366,3.83701 1.87328,4.4826 -0.95273,0.57156 -1.59486,2.37981 -1.50642,4.55956 l 0.0911,2.24626 c 0.0852,2.10047 0.82121,3.85727 1.76831,4.49502 -0.89211,0.58174 -1.48932,2.38141 -1.40135,4.54963 0.10711,2.64012 1.18011,4.76556 2.40429,4.76556 l 37.33008,0 c 1.22418,0 2.12274,-2.12544 2.01563,-4.76556 -0.088,-2.16822 -0.82927,-3.96789 -1.76857,-4.54963 0.89536,-0.63775 1.48683,-2.39455 1.40161,-4.49502 l -0.0911,-2.24626 c -0.0884,-2.17975 -0.87533,-3.988 -1.87444,-4.55956 0.95723,-0.64559 1.59239,-2.3923 1.50758,-4.4826 -0.10711,-2.64012 -0.81311,-4.76557 -2.20507,-4.76557 z"
+       id="clothes.bottom.fluffy.kiriban.3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssccscssscccscsss"
+       class="clothes.bottom.1" />
+    <path
+       style="display:inline;opacity:1;fill:#29348a;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 383.21009,646.49891 c 1.39196,0 1.30243,2.12544 1.19532,4.76556 -0.0848,2.0903 -0.86366,3.83702 -1.87328,4.4826 0.95273,0.57157 1.59486,2.37981 1.50642,4.55957 l -0.0911,2.24626 c -0.0852,2.10047 -0.82121,3.85727 -1.76831,4.49501 0.89211,0.58175 1.48932,2.38141 1.40135,4.54963 -0.10711,2.64012 -1.18011,4.76556 -2.40429,4.76556 l -37.33008,0 c -1.22418,0 -2.12274,-2.12544 -2.01563,-4.76556 0.088,-2.16822 0.82927,-3.96788 1.76857,-4.54963 -0.89536,-0.63774 -1.48683,-2.39454 -1.40161,-4.49501 l 0.0911,-2.24626 c 0.0884,-2.17976 0.87533,-3.988 1.87444,-4.55957 -0.95723,-0.64558 -1.59239,-2.3923 -1.50758,-4.4826 0.10711,-2.64012 1.06311,-4.76556 2.45507,-4.76556 z"
+       id="clothes.bottom.fluffy.kiriban.4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssccscssscccscsss"
+       class="clothes.bottom.1" />
+    <path
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.19607843;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 266.7552,646.4988 c -1.39196,0 -1.67743,2.12545 -1.57032,4.76557 0.0848,2.0903 0.86366,3.83701 1.87328,4.4826 -0.95273,0.57156 -1.59486,2.37981 -1.50642,4.55956 l 0.0911,2.24626 c 0.0852,2.10047 0.82121,3.85727 1.76831,4.49502 -0.89211,0.58174 -1.48932,2.38141 -1.40135,4.54963 0.10711,2.64012 1.18011,4.76556 2.40429,4.76556 l 37.33008,0 c 1.22418,0 2.12274,-2.12544 2.01563,-4.76556 -0.088,-2.16822 -0.82927,-3.96789 -1.76857,-4.54963 0.89536,-0.63775 1.48683,-2.39455 1.40161,-4.49502 l -0.0911,-2.24626 c -0.0884,-2.17975 -0.87533,-3.988 -1.87444,-4.55956 0.95723,-0.64559 1.59239,-2.3923 1.50758,-4.4826 -0.10711,-2.64012 -0.81311,-4.76557 -2.20507,-4.76557 z"
+       id="clothes.bottom.fluffy.kiriban.3-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssccscssscccscsss"
+       class="" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 275.32236,667.0438 -8.07062,0"
+       id="path6189"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.19607843;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 383.21026,646.49845 c 1.39196,0 1.30243,2.12544 1.19532,4.76556 -0.0848,2.0903 -0.86366,3.83702 -1.87328,4.4826 0.95273,0.57157 1.59486,2.37981 1.50642,4.55957 l -0.0911,2.24626 c -0.0852,2.10047 -0.82121,3.85727 -1.76831,4.49501 0.89211,0.58175 1.48932,2.38141 1.40135,4.54963 -0.10711,2.64012 -1.18011,4.76556 -2.40429,4.76556 l -37.33009,0 c -1.22418,0 -2.12274,-2.12544 -2.01563,-4.76556 0.088,-2.16822 0.82927,-3.96788 1.76857,-4.54963 -0.89536,-0.63774 -1.48683,-2.39454 -1.40161,-4.49501 l 0.0911,-2.24626 c 0.0884,-2.17976 0.87533,-3.988 1.87444,-4.55957 -0.95723,-0.64558 -1.59239,-2.3923 -1.50758,-4.4826 0.10711,-2.64012 1.06311,-4.76556 2.45507,-4.76556 z"
+       id="clothes.bottom.fluffy.kiriban.4-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssccscssscccscsss"
+       class="" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 279.89371,655.75085 -12.83735,0"
+       id="path6189-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 343.28815,667.0442 7.82066,0"
+       id="path6189-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 343.79155,655.75126 16.13675,0"
+       id="path6189-7-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 306.04229,667.0438 -17.03099,0"
+       id="path6189-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 305.6263,655.75085 -13.01592,0"
+       id="path6189-7-01"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 372.17818,667.0442 10.07954,0"
+       id="path6189-0-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 371.49592,655.75126 11.0152,0"
+       id="path6189-7-0-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.clothes.top.itchy.above"
      class="layer-clothes-top-itchy-above"
@@ -2446,6 +2557,20 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        style="display:inline;fill:#632994;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
+     style="display:none;opacity:1"
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.fluffy.kiriban.above"
+     class="layer-clothes-top-fluffy-kiriban-above"
+     sodipodi:insensitive="true">
+    <path
+       class="clothes.top.1"
+       sodipodi:nodetypes="cscccsszsscccccscc"
+       inkscape:connector-curvature="0"
+       id="clothes.top.fluffy.kiriban"
+       d="m 239.69336,241.28711 c -4.00097,7.60612 -9.50924,19.67541 -11.4668,25.63281 -10.79143,32.84126 -16.78557,63.65999 -16.96679,96.91406 15.83594,7.50713 33.67189,10.3914 49.50783,4.72657 l 3.13867,-86.84961 c 1.47732,18.95836 -0.6875,56.93185 -0.6875,76.25195 0,21.67285 -11.04687,53.6393 -11.04687,79.60547 0,13.5755 41.34122,61.92383 72.94628,61.92383 31.60506,0 74.70594,-44.8831 72.9502,-61.88086 -2.66406,-25.7914 -10.29102,-57.953 -10.29102,-79.65039 0,-18.74139 -2.61181,-55.85832 -1.43359,-74.9668 l 3.75781,85.5625 c 12.00522,2.9739 27.15485,3.5245 48.51583,-4.72852 0.10458,-40.63302 -11.2685,-93.54721 -14.84961,-106.9121 -4.45905,-13.15326 -9.8595,-38.11427 -19.99805,-44.50196 -3.31707,-1.9744 -8.21235,-3.36082 -14.26367,-4.83789 -6.05132,-1.47707 -15.08663,-0.86425 -21.80274,-2.0664 -16.10468,27.63751 -79.643,31.06236 -128.00998,35.77734 z"
+       style="opacity:1;fill:#9f6472;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.hair.above.seeds"
      class="layer-hair-above"
@@ -2559,6 +2684,27 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="hair.broken.1"
        d="m 325.50977,60.632812 c -37.79513,-1.45e-4 -69.99855,18.645978 -78.01357,61.615958 -2.50071,13.40674 -4.4692,28.35743 -5.23274,44.65818 -0.3147,6.71847 -0.95056,13.82718 -10.9119,17.59891 14.02314,1.27151 19.83089,1.94564 26.36328,-11.91016 0.54574,6.81117 1.07396,10.52329 -4.43554,19.75977 8.14323,-3.62379 11.99741,-7.61684 13.89453,-13.34375 5.71799,4.79397 12.29733,8.93095 19.62305,12.20703 -2.74091,-3.24731 -5.15797,-6.81381 -7.24415,-10.61523 -3.98935,-8.47113 -4.50406,-14.59907 -4.62078,-19.39711 6.61978,0.28667 14.7642,2.20969 20.65985,-1.81383 0,0 -12.18427,-1.91173 -15.89258,-8.1211 -10.25107,-17.16489 -6.18128,-34.7147 5.01758,-47.7539 6.18082,-7.19653 10.23815,-10.444063 18.52418,-12.570226 l 1.65676,16.015216 16.42501,-15.55899 5.05881,24.79633 15.30507,-25.95026 c 13.79872,0.985554 17.76221,4.559795 25.69814,10.82066 7.60123,8.64319 10.05389,19.88821 10.25781,33.44727 0.26568,17.66551 0.0611,40.92098 -14.29102,57.12304 5.10523,-2.2178 9.85778,-4.85017 14.22071,-7.83007 1.64202,3.79307 8.26286,9.68673 12.93945,8.54492 -2.16457,-6.63776 -1.00235,-8.62805 0.42773,-15.33789 4.29635,7.30695 9.90062,11.87036 17.5625,11.7832 -4.15175,-6.98937 -7.56034,-14.04745 -8.2539,-21.9375 9.37977,7.45837 17.44336,1.20508 17.44336,1.20508 -12.547,-14.30136 -12.09073,-22.77441 -13.35938,-41.5625 -2.48409,-36.78824 -34.77108,-65.873213 -78.82226,-65.873048 z"
        style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.hair.above.fluffy.kiriban"
+     class="layer-hair-above-fluffy-kiriban"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 328.13281,57.568359 c -22.72374,0.411036 -33.56647,4.359184 -48.91797,17.169922 -0.95394,0.796062 -1.86544,1.639573 -2.75781,2.503907 -0.38662,0.318377 -0.76402,0.621902 -1.15625,0.949218 -1.39893,1.1674 -2.73023,2.411524 -3.99805,3.722656 35.28338,-1.126973 38.77068,-6.387649 64.30665,3.59375 19.98766,7.812698 40.64325,29.306138 39.68633,59.693168 -0.76231,24.20742 2.21546,41.596 13.89803,49.11478 15.05462,9.689 43.50921,-2.8291 40.63701,-37.99262 -3.25823,6.73965 -13.03567,15.31982 -18.24752,13.24469 -6.84173,-2.72408 -7.17813,-13.01975 -6.53253,-32.78992 0.89818,-27.50497 -19.03988,-50.112076 -33.45101,-62.660087 -13.40174,-11.66912 -25.1411,-16.880947 -43.46688,-16.549464 z"
+       id="hair.fluffy.kiriban.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscscssscssss"
+       class="hair" />
+    <path
+       style="opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 321.21448,62.598561 c -11.57001,0.102029 -33.94283,1.835139 -46.66674,15.126119 -11.58019,12.096296 -15.15075,23.79778 -15.47547,28.62102 -0.41016,6.09225 -0.0464,13.29142 2.26953,20.28711 3.47923,-12.99341 9.86876,-25.89853 22.22851,-34.10156 9.90354,-6.57287 28.20021,-10.335504 41.6104,-5.310153 10.03552,3.760725 14.26441,11.024153 14.40913,16.618743 0.14472,5.59458 -4.0261,7.82339 -9.875,8.10157 -5.84891,0.27818 -14.30872,-8.79375 -14.72656,-14.759769 -1.98315,6.056659 5.19289,23.904689 16.42969,28.511719 11.23681,4.60703 30.65813,-4.11657 30.85547,-19.18164 0.38708,-29.549315 -16.51033,-44.129639 -41.05896,-43.913159 z"
+       id="hair.below.fluffy.kiriban.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssscsssscsss"
+       class="hair" />
   </g>
   <g
      inkscape:groupmode="layer"
