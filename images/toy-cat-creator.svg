@@ -206,7 +206,9 @@ function chooseColor(cls) {
   document.getElementById('controls').style.display = 'none';
   document.getElementById('color.picker').style.display = 'inline';
   colorPicker['class'] = cls;
-  colorPicker['old-color'] = imageColors[cls];
+  colorPicker['old-color']['h'] = imageColors[cls]['h'];
+  colorPicker['old-color']['s'] = imageColors[cls]['s'];
+  colorPicker['old-color']['l'] = imageColors[cls]['l'];
   var strColor = colorToString(imageColors[cls]);
   document.getElementById('color.pick.current').style.fill = strColor;
   document.getElementById('color.pick.new').style.fill = strColor;
@@ -230,7 +232,9 @@ function colorPickChangeSatLum(sat, lum) {
 }
 
 function colorPickOldColor() {
-  imageColors[colorPicker['class']] = colorPicker['old-color'];
+  imageColors[colorPicker['class']]['h'] = colorPicker['old-color']['h'];
+  imageColors[colorPicker['class']]['s'] = colorPicker['old-color']['s'];
+  imageColors[colorPicker['class']]['l'] = colorPicker['old-color']['l'];
   changeColorOfClass(colorPicker['class']);
 }
 
@@ -243,8 +247,7 @@ function colorPickerHide(changeColor) {
   document.getElementById('controls').style.display = 'inline';
   document.getElementById('color.picker').style.display = 'none';
   if (!changeColor) {
-    imageColors[colorPicker['class']] = colorPicker['old-color'];
-    changeColorOfClass(colorPicker['class']);
+    colorPickOldColor();
   }
 }
 
