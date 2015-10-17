@@ -26,7 +26,7 @@
   }
 }]]></script>
   <script
-     id="script.layers"><![CDATA[var alternativePatterns = {
+     id="script.layers.data"><![CDATA[var alternativePatterns = {
   'tail': {
     'layers': ['layer.tail.pattern.seeds', 'layer.tail.pattern.itchy'],
     'idx': 0
@@ -122,12 +122,16 @@
     'idx': 0
   }
 }
+]]></script>
+  <script
+     id="script.layers.logic"><![CDATA[
 function updatePattern(pattern, newIdx) {
   var currentLayer = document.getElementById(pattern['layers'][pattern['idx']]);
   currentLayer.style.display = 'none';
   pattern['idx'] = newIdx;
   var nextLayer = document.getElementById(pattern['layers'][pattern['idx']]);
   nextLayer.style.display = 'inline';
+  notifyHash();
 }
 function nextPattern(pat) {
   var pattern = alternativePatterns[pat];
@@ -151,50 +155,63 @@ function randomizeLayers() {
   updatePattern(alternativePatterns['clothes-top-below'], alternativePatterns['clothes-top']['idx']);
 }]]></script>
   <script
-     id="script.colors"><![CDATA[var imageColors = {
-  'body.color.1': 'hsl(330, 83%, 50%)',
-  'body.color.2': 'hsl(0, 100%, 89%)',
-  'ear.right.1': 'hsl(330, 83%, 50%)',
-  'ear.right.2': 'hsl(0, 100%, 89%)',
-  'ear.left.1': 'hsl(0, 100%, 89%)',
-  'ear.left.2': 'hsl(330, 83%, 50%)',
-  'eye.white': 'hsl(0, 0%, 89%)',
-  'eye.pupil.left': 'hsl(270, 100%, 11%)',
-  'eye.pupil.right': 'hsl(330, 60%, 55%)',
-  'hair': 'hsl(0, 100%, 89%)',
-  'underwear.bottom': 'hsl(270, 50%, 24%)',
-  'underwear.top': 'hsl(270, 50%, 24%)',
-  'clothes.bottom.1': 'hsl(0, 17%, 50%)',
-  'clothes.bottom.2': 'hsl(0, 17%, 50%)',
-  'clothes.top.1': 'hsl(30, 83%, 89%)',
-  'clothes.top.2': 'hsl(330, 33%, 37%)',
-  'socks.1': 'hsl(30, 83%, 89%)',
-  'socks.2': 'hsl(30, 83%, 89%)',
-  'shoes.1': 'hsl(330, 17%, 37%)',
-  'shoes.2': 'hsl(330, 17%, 37%)',
-  'hat.1': 'hsl(330, 100%, 50%)',
-  'hat.2': 'hsl(330, 100%, 50%)'
+     id="script.colors.data"><![CDATA[var imageColors = {
+  'body.color.1': {'h': 330, 's': 83, 'l': 50},
+  'body.color.2': {'h': 0, 's': 100, 'l': 89},
+  'ear.right.1': {'h': 330, 's': 83, 'l': 50},
+  'ear.right.2': {'h': 0, 's': 100, 'l': 89},
+  'ear.left.1': {'h': 0, 's': 100, 'l': 89},
+  'ear.left.2': {'h': 330, 's': 83, 'l': 50},
+  'eye.white': {'h': 0, 's': 0, 'l': 89},
+  'eye.pupil.left': {'h': 270, 's': 100, 'l': 11},
+  'eye.pupil.right': {'h': 330, 's': 67, 'l': 50},
+  'hair': {'h': 0, 's': 100, 'l': 89},
+  'underwear.bottom': {'h': 270, 's': 50, 'l': 24},
+  'underwear.top': {'h': 270, 's': 50, 'l': 24},
+  'clothes.bottom.1': {'h': 0, 's': 17, 'l': 50},
+  'clothes.bottom.2': {'h': 0, 's': 17, 'l': 50},
+  'clothes.top.1': {'h': 30, 's': 83, 'l': 89},
+  'clothes.top.2': {'h': 330, 's': 33, 'l': 37},
+  'socks.1': {'h': 30, 's': 83, 'l': 89},
+  'socks.2': {'h': 30, 's': 83, 'l': 89},
+  'shoes.1': {'h': 330, 's': 17, 'l': 37},
+  'shoes.2': {'h': 330, 's': 17, 'l': 37},
+  'hat.1': {'h': 330, 's': 100, 'l': 50},
+  'hat.2': {'h': 330, 's': 100, 'l': 50}
 };
+  ]]></script>
+  <script
+     id="script.colors.logic"><![CDATA[
 var colorPicker = {
   'class': 'body.color.1',
-  'old-color': 'hsl(0, 0%, 0%)',
-  'hue': 0,
+  'old-color': {'h': 0, 's': 0, 'l': 0},
+  'hue': 0
 };
+
+function colorToString(color) {
+  return 'hsl(' + color['h'] + ', ' + color['s'] + '%, ' + color['l'] + '%)';
+}
+
 function changeColorOfClass(cls) {
   var elements = document.getElementsByClassName(cls);
+  var strColor = colorToString(imageColors[cls]);
   for (var i = 0; i < elements.length; i++) {
-    elements[i].style.fill = imageColors[cls];
+    elements[i].style.fill = strColor;
   }
-  document.getElementById('color.pick.new').style.fill = imageColors[cls];
+  document.getElementById('color.pick.new').style.fill = strColor;
+  notifyHash();
 }
+
 function chooseColor(cls) {
   document.getElementById('controls').style.display = 'none';
   document.getElementById('color.picker').style.display = 'inline';
   colorPicker['class'] = cls;
   colorPicker['old-color'] = imageColors[cls];
-  document.getElementById('color.pick.current').style.fill = imageColors[cls];
-  document.getElementById('color.pick.new').style.fill = imageColors[cls];
+  var strColor = colorToString(imageColors[cls]);
+  document.getElementById('color.pick.current').style.fill = strColor;
+  document.getElementById('color.pick.new').style.fill = strColor;
 }
+
 function colorPickChangeHue(hue) {
   colorPicker['hue'] = hue;
   for (sat of [0, 17, 33, 50, 67, 83, 100]) {
@@ -204,18 +221,24 @@ function colorPickChangeHue(hue) {
     }
   }
 }
+
 function colorPickChangeSatLum(sat, lum) {
-  imageColors[colorPicker['class']] = 'hsl(' + colorPicker['hue'] + ', ' + sat + '%, ' + lum + '%)';
+  imageColors[colorPicker['class']]['h'] = colorPicker['hue'];
+  imageColors[colorPicker['class']]['s'] = sat;
+  imageColors[colorPicker['class']]['l'] = lum;
   changeColorOfClass(colorPicker['class']);
 }
+
 function colorPickOldColor() {
   imageColors[colorPicker['class']] = colorPicker['old-color'];
   changeColorOfClass(colorPicker['class']);
 }
+
 function pickColorClass(cls) {
   imageColors[colorPicker['class']] = imageColors[cls];
   changeColorOfClass(colorPicker['class']);
 }
+
 function colorPickerHide(changeColor) {
   document.getElementById('controls').style.display = 'inline';
   document.getElementById('color.picker').style.display = 'none';
@@ -224,24 +247,161 @@ function colorPickerHide(changeColor) {
     changeColorOfClass(colorPicker['class']);
   }
 }
+
 function initColors() {
   for (cls in imageColors) {
     changeColorOfClass(cls);
   }
 }
+
 function pickFrom(arr) {
   var idx = Math.floor(Math.random() * arr.length);
   return arr[idx];
 }
+
 function randomizeColors() {
   for (cls in imageColors) {
     var hue = Math.floor(Math.random() * 12) * 30;
     var sat = pickFrom([0, 17, 33, 50, 67, 83, 100]);
     var lum = pickFrom([11, 24, 37, 50, 63, 76, 89]);
-    imageColors[cls] = 'hsl(' + hue + ', ' + sat + '%, ' + lum + '%)';
+    imageColors[cls]['h'] = hue;
+    imageColors[cls]['s'] = sat;
+    imageColors[cls]['l'] = lum;
     changeColorOfClass(cls);
   }
 }]]></script>
+  <script id="host.api"><![CDATA[
+function readIdxPattern(arr, i, pat) {
+  if (i < arr.length) {
+    var n = parseInt(arr[i], 10);
+    if (!isNaN(n)) {
+      var pattern = alternativePatterns[pat];
+      n = n % pattern['layers'].length;
+      updatePattern(pattern, n);
+    }
+  }
+}
+
+function colorToHash(color) {
+  return color['h'] + '.' + color['s'] + '.' + color['l'];
+}
+
+function readColorClass(arr, i, cls) {
+  if (i < arr.length) {
+    var components = arr[i].split('.');
+    if (components.length == 3) {
+      var hue = parseInt(components[0], 10);
+      var sat = parseInt(components[1], 10);
+      var lum = parseInt(components[2], 10);
+      if (!isNaN(hue) && !isNaN(sat) && !isNaN(lum)) {
+        imageColors[cls]['h'] = hue;
+        imageColors[cls]['s'] = sat;
+        imageColors[cls]['l'] = lum;
+        changeColorOfClass(cls);
+      }
+    }
+  }
+}
+
+function computeHash() {
+  var h = '';
+  /* Layers */
+  h += alternativePatterns['tail']['idx'] + ':';
+  h += alternativePatterns['hair-above']['idx'] + ':';
+  h += alternativePatterns['eyes']['idx'] + ':';
+  h += alternativePatterns['eye-spot']['idx'] + ':';
+  h += alternativePatterns['underwear-bottom']['idx'] + ':';
+  h += alternativePatterns['underwear-top']['idx'] + ':';
+  h += alternativePatterns['clothes-bottom']['idx'] + ':';
+  h += alternativePatterns['clothes-top']['idx'] + ':';
+  h += alternativePatterns['socks']['idx'] + ':';
+  h += alternativePatterns['shoes']['idx'] + ':';
+  h += alternativePatterns['hat']['idx'] + ':';
+  /* Colors */
+  h += colorToHash(imageColors['body.color.1']) + ':';
+  h += colorToHash(imageColors['body.color.2']) + ':';
+  h += colorToHash(imageColors['ear.right.1']) + ':';
+  h += colorToHash(imageColors['ear.right.2']) + ':';
+  h += colorToHash(imageColors['ear.left.1']) + ':';
+  h += colorToHash(imageColors['ear.left.2']) + ':';
+  h += colorToHash(imageColors['eye.white']) + ':';
+  h += colorToHash(imageColors['eye.pupil.left']) + ':';
+  h += colorToHash(imageColors['eye.pupil.right']) + ':';
+  h += colorToHash(imageColors['hair']) + ':';
+  h += colorToHash(imageColors['underwear.bottom']) + ':';
+  h += colorToHash(imageColors['underwear.top']) + ':';
+  h += colorToHash(imageColors['clothes.bottom.1']) + ':';
+  h += colorToHash(imageColors['clothes.bottom.2']) + ':';
+  h += colorToHash(imageColors['clothes.top.1']) + ':';
+  h += colorToHash(imageColors['clothes.top.2']) + ':';
+  h += colorToHash(imageColors['socks.1']) + ':';
+  h += colorToHash(imageColors['socks.2']) + ':';
+  h += colorToHash(imageColors['shoes.1']) + ':';
+  h += colorToHash(imageColors['shoes.2']) + ':';
+  h += colorToHash(imageColors['hat.1']) + ':';
+  h += colorToHash(imageColors['hat.2']) + ':';
+  return h;
+}
+
+function readHash(h) {
+  var arr = h.split(':');
+  /* Layers */
+  readIdxPattern(arr, 0, 'tail');
+  readIdxPattern(arr, 1, 'hair-above');
+  readIdxPattern(arr, 1, 'hair-below');
+  readIdxPattern(arr, 2, 'eyes');
+  readIdxPattern(arr, 3, 'eye-spot');
+  readIdxPattern(arr, 4, 'underwear-bottom');
+  readIdxPattern(arr, 5, 'underwear-top');
+  readIdxPattern(arr, 6, 'clothes-bottom');
+  readIdxPattern(arr, 7, 'clothes-top');
+  readIdxPattern(arr, 7, 'clothes-top-above');
+  readIdxPattern(arr, 7, 'clothes-top-below');
+  readIdxPattern(arr, 8, 'socks');
+  readIdxPattern(arr, 9, 'shoes');
+  readIdxPattern(arr, 10, 'hat');
+  /* Colors */
+  readColorClass(arr, 11, 'body.color.1');
+  readColorClass(arr, 12, 'body.color.2');
+  readColorClass(arr, 13, 'ear.right.1');
+  readColorClass(arr, 14, 'ear.right.2');
+  readColorClass(arr, 15, 'ear.left.1');
+  readColorClass(arr, 16, 'ear.left.2');
+  readColorClass(arr, 17, 'eye.white');
+  readColorClass(arr, 18, 'eye.pupil.left');
+  readColorClass(arr, 19, 'eye.pupil.right');
+  readColorClass(arr, 20, 'hair');
+  readColorClass(arr, 21, 'underwear.bottom');
+  readColorClass(arr, 22, 'underwear.top');
+  readColorClass(arr, 23, 'clothes.bottom.1');
+  readColorClass(arr, 24, 'clothes.bottom.2');
+  readColorClass(arr, 25, 'clothes.top.1');
+  readColorClass(arr, 26, 'clothes.top.2');
+  readColorClass(arr, 27, 'socks.1');
+  readColorClass(arr, 28, 'socks.2');
+  readColorClass(arr, 29, 'shoes.1');
+  readColorClass(arr, 30, 'shoes.2');
+  readColorClass(arr, 31, 'hat.1');
+  readColorClass(arr, 32, 'hat.2');
+}
+
+function initFromHash(input) {
+  if (input) {
+    readHash(input.substr(1));
+  }
+}
+
+var notifiers=[];
+function notifyHash() {
+  var h = '#' + computeHash();
+  for (var i = 0; i < notifiers.length; ++i) {
+    notifiers[i](h);
+  }
+}
+function addHashCallback(callback) {
+  notifiers = notifiers.concat(callback);
+}
+  ]]></script>
   <defs
      id="defs4" />
   <sodipodi:namedview
