@@ -131,7 +131,7 @@ function updatePattern(pattern, newIdx) {
   pattern['idx'] = newIdx;
   var nextLayer = document.getElementById(pattern['layers'][pattern['idx']]);
   nextLayer.style.display = 'inline';
-  notifyHash();
+  notifyChangeState();
 }
 function nextPattern(pat) {
   var pattern = alternativePatterns[pat];
@@ -199,7 +199,7 @@ function changeColorOfClass(cls) {
     elements[i].style.fill = strColor;
   }
   document.getElementById('color.pick.new').style.fill = strColor;
-  notifyHash();
+  notifyChangeState();
 }
 
 function chooseColor(cls) {
@@ -276,7 +276,7 @@ function randomizeColors() {
   <script id="host.api"><![CDATA[
 function readIdxPattern(arr, i, pat) {
   if (i < arr.length) {
-    var n = parseInt(arr[i], 10);
+    var n = arr[i];
     if (!isNaN(n)) {
       var pattern = alternativePatterns[pat];
       n = n % pattern['layers'].length;
@@ -285,69 +285,105 @@ function readIdxPattern(arr, i, pat) {
   }
 }
 
-function colorToHash(color) {
-  return color['h'] + '.' + color['s'] + '.' + color['l'];
-}
-
 function readColorClass(arr, i, cls) {
-  if (i < arr.length) {
-    var components = arr[i].split('.');
-    if (components.length == 3) {
-      var hue = parseInt(components[0], 10);
-      var sat = parseInt(components[1], 10);
-      var lum = parseInt(components[2], 10);
-      if (!isNaN(hue) && !isNaN(sat) && !isNaN(lum)) {
-        imageColors[cls]['h'] = hue;
-        imageColors[cls]['s'] = sat;
-        imageColors[cls]['l'] = lum;
-        changeColorOfClass(cls);
-      }
+  if (i < (arr.length - 3)) {
+    var hue = arr[i];
+    var sat = arr[i+1];
+    var lum = arr[i+2];
+    if (!isNaN(hue) && !isNaN(sat) && !isNaN(lum)) {
+      imageColors[cls]['h'] = hue;
+      imageColors[cls]['s'] = sat;
+      imageColors[cls]['l'] = lum;
+      changeColorOfClass(cls);
     }
   }
 }
 
-function computeHash() {
-  var h = '';
-  /* Layers */
-  h += alternativePatterns['tail']['idx'] + ':';
-  h += alternativePatterns['hair-above']['idx'] + ':';
-  h += alternativePatterns['eyes']['idx'] + ':';
-  h += alternativePatterns['eye-spot']['idx'] + ':';
-  h += alternativePatterns['underwear-bottom']['idx'] + ':';
-  h += alternativePatterns['underwear-top']['idx'] + ':';
-  h += alternativePatterns['clothes-bottom']['idx'] + ':';
-  h += alternativePatterns['clothes-top']['idx'] + ':';
-  h += alternativePatterns['socks']['idx'] + ':';
-  h += alternativePatterns['shoes']['idx'] + ':';
-  h += alternativePatterns['hat']['idx'] + ':';
-  /* Colors */
-  h += colorToHash(imageColors['body.color.1']) + ':';
-  h += colorToHash(imageColors['body.color.2']) + ':';
-  h += colorToHash(imageColors['ear.right.1']) + ':';
-  h += colorToHash(imageColors['ear.right.2']) + ':';
-  h += colorToHash(imageColors['ear.left.1']) + ':';
-  h += colorToHash(imageColors['ear.left.2']) + ':';
-  h += colorToHash(imageColors['eye.white']) + ':';
-  h += colorToHash(imageColors['eye.pupil.left']) + ':';
-  h += colorToHash(imageColors['eye.pupil.right']) + ':';
-  h += colorToHash(imageColors['hair']) + ':';
-  h += colorToHash(imageColors['underwear.bottom']) + ':';
-  h += colorToHash(imageColors['underwear.top']) + ':';
-  h += colorToHash(imageColors['clothes.bottom.1']) + ':';
-  h += colorToHash(imageColors['clothes.bottom.2']) + ':';
-  h += colorToHash(imageColors['clothes.top.1']) + ':';
-  h += colorToHash(imageColors['clothes.top.2']) + ':';
-  h += colorToHash(imageColors['socks.1']) + ':';
-  h += colorToHash(imageColors['socks.2']) + ':';
-  h += colorToHash(imageColors['shoes.1']) + ':';
-  h += colorToHash(imageColors['shoes.2']) + ':';
-  h += colorToHash(imageColors['hat.1']) + ':';
-  h += colorToHash(imageColors['hat.2']) + ':';
-  return h;
+function writeState() {
+  return [
+    /* Layers */
+    alternativePatterns['tail']['idx'],
+    alternativePatterns['hair-above']['idx'],
+    alternativePatterns['eyes']['idx'],
+    alternativePatterns['eye-spot']['idx'],
+    alternativePatterns['underwear-bottom']['idx'],
+    alternativePatterns['underwear-top']['idx'],
+    alternativePatterns['clothes-bottom']['idx'],
+    alternativePatterns['clothes-top']['idx'],
+    alternativePatterns['socks']['idx'],
+    alternativePatterns['shoes']['idx'],
+    alternativePatterns['hat']['idx'],
+    /* Colors */
+    imageColors['body.color.1']['h'],
+    imageColors['body.color.1']['s'],
+    imageColors['body.color.1']['l'],
+    imageColors['body.color.2']['h'],
+    imageColors['body.color.2']['s'],
+    imageColors['body.color.2']['l'],
+    imageColors['ear.right.1']['h'],
+    imageColors['ear.right.1']['s'],
+    imageColors['ear.right.1']['l'],
+    imageColors['ear.right.2']['h'],
+    imageColors['ear.right.2']['s'],
+    imageColors['ear.right.2']['l'],
+    imageColors['ear.left.1']['h'],
+    imageColors['ear.left.1']['s'],
+    imageColors['ear.left.1']['l'],
+    imageColors['ear.left.2']['h'],
+    imageColors['ear.left.2']['s'],
+    imageColors['ear.left.2']['l'],
+    imageColors['eye.white']['h'],
+    imageColors['eye.white']['s'],
+    imageColors['eye.white']['l'],
+    imageColors['eye.pupil.left']['h'],
+    imageColors['eye.pupil.left']['s'],
+    imageColors['eye.pupil.left']['l'],
+    imageColors['eye.pupil.right']['h'],
+    imageColors['eye.pupil.right']['s'],
+    imageColors['eye.pupil.right']['l'],
+    imageColors['hair']['h'],
+    imageColors['hair']['s'],
+    imageColors['hair']['l'],
+    imageColors['underwear.bottom']['h'],
+    imageColors['underwear.bottom']['s'],
+    imageColors['underwear.bottom']['l'],
+    imageColors['underwear.top']['h'],
+    imageColors['underwear.top']['s'],
+    imageColors['underwear.top']['l'],
+    imageColors['clothes.bottom.1']['h'],
+    imageColors['clothes.bottom.1']['s'],
+    imageColors['clothes.bottom.1']['l'],
+    imageColors['clothes.bottom.2']['h'],
+    imageColors['clothes.bottom.2']['s'],
+    imageColors['clothes.bottom.2']['l'],
+    imageColors['clothes.top.1']['h'],
+    imageColors['clothes.top.1']['s'],
+    imageColors['clothes.top.1']['l'],
+    imageColors['clothes.top.2']['h'],
+    imageColors['clothes.top.2']['s'],
+    imageColors['clothes.top.2']['l'],
+    imageColors['socks.1']['h'],
+    imageColors['socks.1']['s'],
+    imageColors['socks.1']['l'],
+    imageColors['socks.2']['h'],
+    imageColors['socks.2']['s'],
+    imageColors['socks.2']['l'],
+    imageColors['shoes.1']['h'],
+    imageColors['shoes.1']['s'],
+    imageColors['shoes.1']['l'],
+    imageColors['shoes.2']['h'],
+    imageColors['shoes.2']['s'],
+    imageColors['shoes.2']['l'],
+    imageColors['hat.1']['h'],
+    imageColors['hat.1']['s'],
+    imageColors['hat.1']['l'],
+    imageColors['hat.2']['h'],
+    imageColors['hat.2']['s'],
+    imageColors['hat.2']['l']
+  ];
 }
 
-function readHash(h) {
-  var arr = h.split(':');
+function readState(arr) {
   /* Layers */
   readIdxPattern(arr, 0, 'tail');
   readIdxPattern(arr, 1, 'hair-above');
@@ -365,44 +401,45 @@ function readHash(h) {
   readIdxPattern(arr, 10, 'hat');
   /* Colors */
   readColorClass(arr, 11, 'body.color.1');
-  readColorClass(arr, 12, 'body.color.2');
-  readColorClass(arr, 13, 'ear.right.1');
-  readColorClass(arr, 14, 'ear.right.2');
-  readColorClass(arr, 15, 'ear.left.1');
-  readColorClass(arr, 16, 'ear.left.2');
-  readColorClass(arr, 17, 'eye.white');
-  readColorClass(arr, 18, 'eye.pupil.left');
-  readColorClass(arr, 19, 'eye.pupil.right');
-  readColorClass(arr, 20, 'hair');
-  readColorClass(arr, 21, 'underwear.bottom');
-  readColorClass(arr, 22, 'underwear.top');
-  readColorClass(arr, 23, 'clothes.bottom.1');
-  readColorClass(arr, 24, 'clothes.bottom.2');
-  readColorClass(arr, 25, 'clothes.top.1');
-  readColorClass(arr, 26, 'clothes.top.2');
-  readColorClass(arr, 27, 'socks.1');
-  readColorClass(arr, 28, 'socks.2');
-  readColorClass(arr, 29, 'shoes.1');
-  readColorClass(arr, 30, 'shoes.2');
-  readColorClass(arr, 31, 'hat.1');
-  readColorClass(arr, 32, 'hat.2');
+  readColorClass(arr, 14, 'body.color.2');
+  readColorClass(arr, 17, 'ear.right.1');
+  readColorClass(arr, 20, 'ear.right.2');
+  readColorClass(arr, 23, 'ear.left.1');
+  readColorClass(arr, 26, 'ear.left.2');
+  readColorClass(arr, 29, 'eye.white');
+  readColorClass(arr, 32, 'eye.pupil.left');
+  readColorClass(arr, 35, 'eye.pupil.right');
+  readColorClass(arr, 38, 'hair');
+  readColorClass(arr, 41, 'underwear.bottom');
+  readColorClass(arr, 44, 'underwear.top');
+  readColorClass(arr, 47, 'clothes.bottom.1');
+  readColorClass(arr, 50, 'clothes.bottom.2');
+  readColorClass(arr, 53, 'clothes.top.1');
+  readColorClass(arr, 56, 'clothes.top.2');
+  readColorClass(arr, 59, 'socks.1');
+  readColorClass(arr, 62, 'socks.2');
+  readColorClass(arr, 65, 'shoes.1');
+  readColorClass(arr, 68, 'shoes.2');
+  readColorClass(arr, 71, 'hat.1');
+  readColorClass(arr, 74, 'hat.2');
 }
 
-function initFromHash(input) {
+function initFromState(input) {
   if (input) {
-    readHash(input.substr(1));
+    readState(input);
   }
 }
 
 var notifiers=[];
-function notifyHash() {
-  var h = '#' + computeHash();
+function notifyChangeState() {
+  var h = writeState();
   for (var i = 0; i < notifiers.length; ++i) {
     notifiers[i](h);
   }
 }
-function addHashCallback(callback) {
-  notifiers = notifiers.concat(callback);
+
+function addChangeStateCallback(callback) {
+  notifiers = notifiers.push(callback);
 }
   ]]></script>
   <defs
