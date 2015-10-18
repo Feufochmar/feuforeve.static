@@ -286,7 +286,7 @@ function readIdxPattern(arr, i, pat) {
 }
 
 function readColorClass(arr, i, cls) {
-  if (i < (arr.length - 3)) {
+  if (i < (arr.length - 2)) {
     var hue = arr[i];
     var sat = arr[i+1];
     var lum = arr[i+2];
