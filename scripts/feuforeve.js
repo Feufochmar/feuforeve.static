@@ -12,8 +12,8 @@ function getSvgRawImage(address, idSvg, idRaw) {
         }
       }
     };
-  request.open('GET', address, false);
-  request.send(null);
+  request.open('GET', address, true);
+  request.send();
 }
 
 function getSvgImage(address, idSvg) {

@@ -8,6 +8,6 @@ function getFlag() {
         document.getElementById('raw').innerHTML = request.responseText;
       }
     };
-  request.open('GET', '/FlagGenerator/RawFlag', false);
-  request.send(null);
+  request.open('GET', '/FlagGenerator/RawFlag', true);
+  request.send();
 }
