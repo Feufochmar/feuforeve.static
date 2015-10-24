@@ -1,0 +1,17 @@
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label:after {
+  content: '🔒';
+  font-size: 15pt;
+}
+
+input[type=checkbox]:not(:checked) + label:after {
+  content: '🔓';
+  font-size: 15pt;
+}
