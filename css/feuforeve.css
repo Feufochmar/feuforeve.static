@@ -43,7 +43,7 @@ hr {
 }
 
 footer {
-  background-color: hsla(230, 10%, 90%, 0.33);
+  background-color: hsla(230, 10%, 90%, 0.40);
 
   border-style: solid;
   border-width: thin;
@@ -55,7 +55,7 @@ footer {
 }
 
 article {
-  background-color: hsla(230, 10%, 90%, 0.33);
+  background-color: hsla(230, 10%, 90%, 0.40);
   border-style: solid;
   border-width: thin;
   border-radius: 5px;
@@ -64,12 +64,20 @@ article {
 }
 
 nav {
-  background-color: hsla(230, 10%, 90%, 0.33);
+  background-color: hsla(230, 10%, 90%, 0.40);
   border-style: solid;
   border-width: thin;
   border-radius: 5px;
   margin: 2px;
   padding: 3px;
+}
+
+section {
+  padding-left: 5px;
+}
+
+p {
+  padding-left: 7px;
 }
 
 .nav-item {
