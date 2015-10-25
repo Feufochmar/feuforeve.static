@@ -36,7 +36,21 @@ function updateEntries() {
   setEntry('affinity', characterSheet['affinity']['name']);
   setEntry('gender', characterSheet['gender']['title']);
   setEntry('gender.pronouns', characterSheet['gender']['pronouns']);
+  /**/
+  setEntry('birthdate.month', characterSheet['birthdate']['month']['name']);
+  setEntry('birthdate.day', characterSheet['birthdate']['day']);
+  setEntry('astrological.sign', characterSheet['birthdate']['astrological-sign']['name']);
+  setEntry('birth.place', characterSheet['birth-place']);
+  setEntry('sex', characterSheet['sex']['description']);
   /* TODO */
+}
+
+function getDataForRequest(entryId, key, value) {
+  var data = '';
+  if (isLocked(entryId)) {
+    data = '(' + key + ' . ' + value + ')';
+  }
+  return data;
 }
 
 function buildRequestData() {
@@ -55,9 +69,7 @@ function buildRequestData() {
     requestData += ' (word-phonemes . ' + characterSheet['names']['other']['word-phonemes'] + '))';
     requestData += ')';
   }
-  if (isLocked('language')) {
-    requestData += '(language . ' + characterSheet['names']['language']['key'] + ')';
-  }
+  requestData += getDataForRequest('language', 'language', characterSheet['names']['language']['key']);
   /**/
   if (isLocked('species')) {
     requestData += '(species . ' + characterSheet['species']['key'] + ')';
@@ -67,12 +79,19 @@ function buildRequestData() {
     }
     requestData += '(base-species . ' + baseSpecies + ')';
   }
-  if (isLocked('affinity')) {
-    requestData += '(affinity . ' + characterSheet['affinity']['key'] + ')';
+  requestData += getDataForRequest('affinity', 'affinity', characterSheet['affinity']['key']);
+  requestData += getDataForRequest('gender', 'gender', characterSheet['gender']['key']);
+  /**/
+  if (isLocked('birthdate.month') || isLocked('birthdate.day') || isLocked('astrological.sign')) {
+    requestData += '(birthdate . (';
+    requestData += getDataForRequest('birthdate.month', 'month', characterSheet['birthdate']['month']['key']);
+    requestData += getDataForRequest('birthdate.day', 'day', characterSheet['birthdate']['day']);
+    requestData += getDataForRequest('astrological.sign', 'astrological-sign',
+                                     characterSheet['birthdate']['astrological-sign']['key']);
+    requestData += '))';
   }
-  if (isLocked('gender')) {
-    requestData += '(gender . ' + characterSheet['gender']['key'] + ')';
-  }
+  requestData += getDataForRequest('birth.place', 'birth-place', "\"" + characterSheet['birth-place'] + "\"");
+  requestData += getDataForRequest('sex', 'sex', characterSheet['sex']['key']);
   /* TODO */
   requestData += ')';
   console.log(requestData);
