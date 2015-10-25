@@ -42,6 +42,14 @@ function updateEntries() {
   setEntry('astrological.sign', characterSheet['birthdate']['astrological-sign']['name']);
   setEntry('birth.place', characterSheet['birth-place']);
   setEntry('sex', characterSheet['sex']['description']);
+  /**/
+  setEntry('living.place', characterSheet['living-place']);
+  setEntry('age', characterSheet['age']['description']);
+  if (characterSheet['profession']) {
+    setEntry('profession', characterSheet['profession']);
+  } else {
+    setEntry('profession', "none");
+  }
   /* TODO */
 }
 
@@ -92,6 +100,14 @@ function buildRequestData() {
   }
   requestData += getDataForRequest('birth.place', 'birth-place', "\"" + characterSheet['birth-place'] + "\"");
   requestData += getDataForRequest('sex', 'sex', characterSheet['sex']['key']);
+  /**/
+  requestData += getDataForRequest('living.place', 'living-place', "\"" + characterSheet['living-place'] + "\"");
+  requestData += getDataForRequest('age', 'age', characterSheet['age']['key']);
+  if (characterSheet['profession']) {
+    requestData += getDataForRequest('profession', 'profession', "\"" + characterSheet['profession'] + "\"");
+  } else {
+    requestData += getDataForRequest('profession', 'profession', "\"none\"");
+  }
   /* TODO */
   requestData += ')';
   console.log(requestData);
