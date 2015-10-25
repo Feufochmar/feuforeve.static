@@ -48,8 +48,26 @@ function updateEntries() {
   if (characterSheet['profession']) {
     setEntry('profession', characterSheet['profession']);
   } else {
-    setEntry('profession', "none");
+    setEntry('profession', 'none');
   }
+  /**/
+  setEntry('size', characterSheet['size']);
+  if (characterSheet['weight']) {
+    setEntry('weight', characterSheet['weight']);
+  } else {
+    setEntry('weight', 'middle-weighted');
+  }
+  var natures = '';
+  for (var i = 0; i < characterSheet['natures'].length; ++i) {
+    natures += characterSheet['natures'][i] + ' ';
+  }
+  setEntry('traits.nature', natures);
+  var traits = '';
+  for (var i = 0; i < characterSheet['traits'].length; ++i) {
+    traits += characterSheet['traits'][i] + ' ';
+  }
+  setEntry('traits.other', traits);
+  setEntry('motto', characterSheet['motto']);
   /* TODO */
 }
 
@@ -98,16 +116,36 @@ function buildRequestData() {
                                      characterSheet['birthdate']['astrological-sign']['key']);
     requestData += '))';
   }
-  requestData += getDataForRequest('birth.place', 'birth-place', "\"" + characterSheet['birth-place'] + "\"");
+  requestData += getDataForRequest('birth.place', 'birth-place', '"' + characterSheet['birth-place'] + '"');
   requestData += getDataForRequest('sex', 'sex', characterSheet['sex']['key']);
   /**/
-  requestData += getDataForRequest('living.place', 'living-place', "\"" + characterSheet['living-place'] + "\"");
+  requestData += getDataForRequest('living.place', 'living-place', '"' + characterSheet['living-place'] + '"');
   requestData += getDataForRequest('age', 'age', characterSheet['age']['key']);
   if (characterSheet['profession']) {
-    requestData += getDataForRequest('profession', 'profession', "\"" + characterSheet['profession'] + "\"");
+    requestData += getDataForRequest('profession', 'profession', '"' + characterSheet['profession'] + '"');
   } else {
-    requestData += getDataForRequest('profession', 'profession', "\"none\"");
+    requestData += getDataForRequest('profession', 'profession', '"none"');
   }
+  /**/
+  requestData += getDataForRequest('size', 'size', '"' + characterSheet['size'] + '"');
+  if (characterSheet['weight']) {
+    requestData += getDataForRequest('weight', 'weight', '"' + characterSheet['weight'] + '"');
+  } else {
+    requestData += getDataForRequest('weight', 'weight', '"middle-weighted"');
+  }
+  var natures = '#(';
+  for (var i = 0; i < characterSheet['natures'].length; ++i) {
+    natures += '"' + characterSheet['natures'][i] + '" ';
+  }
+  natures += ')';
+  requestData += getDataForRequest('traits.nature', 'natures', natures);
+  var traits = '#(';
+  for (var i = 0; i < characterSheet['traits'].length; ++i) {
+    traits += '"' + characterSheet['traits'][i] + '" ';
+  }
+  traits += ')';
+  requestData += getDataForRequest('traits.other', 'traits', traits);
+  requestData += getDataForRequest('motto', 'motto', '"' + characterSheet['motto'].replace(/"/g, '\\"') + '"');
   /* TODO */
   requestData += ')';
   console.log(requestData);
