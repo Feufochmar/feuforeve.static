@@ -5,6 +5,46 @@ function setEntry(entryKey, entryValue) {
   textInput.value = entryValue;
 }
 
+function setSpeciesEntry(speciesKey, speciesValue) {
+  var species = '';
+  if (speciesValue['mimic-key']) {
+    species += speciesValue['mimic-name'] + ' ';
+  }
+  species += speciesValue['name'];
+  setEntry(speciesKey, species);
+}
+
+function setParentEntry(parentKey, parentValue) {
+  if (parentValue) {
+    document.getElementById(parentKey).style.display = 'block';
+    setEntry(parentKey + '.name', parentValue['given-name']['transcription']);
+    setEntry(parentKey + '.name.pronounciation', parentValue['given-name']['pronounciation']);
+    setSpeciesEntry(parentKey + '.species', parentValue['species']);
+    setEntry(parentKey + '.gender', parentValue['gender']['title']);
+    setEntry(parentKey + '.gender.pronouns', parentValue['gender']['pronouns']);
+    setEntry(parentKey + '.language', parentValue['language']['name']);
+
+  } else {
+    document.getElementById(parentKey).style.display = 'none';
+    setEntry(parentKey + '.name', 'N/A');
+    setEntry(parentKey + '.name.pronounciation', 'N/A');
+    setEntry(parentKey + '.species', 'N/A');
+    setEntry(parentKey + '.gender', 'N/A');
+    setEntry(parentKey + '.gender.pronouns', 'N/A');
+    setEntry(parentKey + '.language', 'N/A');
+  }
+}
+function setGrandParentEntry(grandParentKey, grandParentValue) {
+  setParentEntry(grandParentKey, grandParentValue);
+  if (grandParentValue) {
+    setEntry(grandParentKey + '.name.family', grandParentValue['family-name']['transcription']);
+    setEntry(grandParentKey + '.name.family.pronounciation', grandParentValue['family-name']['pronounciation']);
+  } else {
+    setEntry(grandParentKey + '.name.family', 'N/A');
+    setEntry(grandParentKey + '.name.family.pronounciation', 'N/A');
+  }
+}
+
 function isLocked(lockKey) {
   var lock = document.getElementById('lock.' + lockKey);
   return lock.checked;
@@ -27,12 +67,7 @@ function updateEntries() {
   setEntry('other.name.pronounciation', characterSheet['names']['other']['pronounciation']);
   setEntry('language', characterSheet['names']['language']['name']);
   /**/
-  var species = '';
-  if (characterSheet['species']['mimic-key']) {
-    species += characterSheet['species']['mimic-name'] + ' ';
-  }
-  species += characterSheet['species']['name'];
-  setEntry('species', species);
+  setSpeciesEntry('species', characterSheet['species']);
   setEntry('affinity', characterSheet['affinity']['name']);
   setEntry('gender', characterSheet['gender']['title']);
   setEntry('gender.pronouns', characterSheet['gender']['pronouns']);
@@ -68,7 +103,13 @@ function updateEntries() {
   }
   setEntry('traits.other', traits);
   setEntry('motto', characterSheet['motto']);
-  /* TODO */
+  /**/
+  setParentEntry('mother', characterSheet['mother']);
+  setParentEntry('father', characterSheet['father']);
+  setGrandParentEntry('grandmother.mother', characterSheet['gmm']);
+  setGrandParentEntry('grandfather.mother', characterSheet['gfm']);
+  setGrandParentEntry('grandmother.father', characterSheet['gmf']);
+  setGrandParentEntry('grandfather.father', characterSheet['gff']);
 }
 
 function getDataForRequest(entryId, key, value) {
