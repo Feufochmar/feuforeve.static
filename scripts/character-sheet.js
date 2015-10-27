@@ -120,20 +120,82 @@ function getDataForRequest(entryId, key, value) {
   return data;
 }
 
+function buildRequestWord(word) {
+  var data = '('
+  data += '(word-language . ' + word['word-language'] + ')';
+  data += '(word-phonemes . ' + word['word-phonemes'] + ')';
+  data += ')';
+  return data;
+}
+
+function hasParentLock(idEntry) {
+  return isLocked(idEntry + '.name') ||
+         isLocked(idEntry + '.species') ||
+         isLocked(idEntry + '.gender') ||
+         isLocked(idEntry + '.language');
+}
+
+function hasGrandParentLock(idEntry) {
+  return hasParentLock(idEntry) || isLocked(idEntry + '.name.family');
+}
+
+function buildParentData(idEntry, key) {
+  var requestData = '';
+  if (isLocked(idEntry + '.name')) {
+    requestData += '(given-name . ';
+    requestData += buildRequestWord(characterSheet[key]['given-name']);
+    requestData += ')';
+  }
+  if (isLocked(idEntry + '.species')) {
+    requestData += '(species . ' + characterSheet[key]['species']['key'] + ')';
+    var baseSpecies = '#f';
+    if (characterSheet[key]['species']['mimic-key']) {
+      baseSpecies = characterSheet[key]['species']['mimic-key'];
+    }
+    requestData += '(base-species . ' + baseSpecies + ')';
+  }
+  requestData += getDataForRequest(idEntry + '.gender', 'gender', characterSheet[key]['gender']['key']);
+  requestData += getDataForRequest(idEntry + '.language', 'language', characterSheet[key]['language']['key']);
+  return requestData;
+}
+
+function getParentDataForRequest(idEntry, key) {
+  var requestData = '';
+  if (characterSheet[key] && hasParentLock(idEntry)) {
+    requestData += '(' + key + ' . (';
+    requestData += buildParentData(idEntry, key);
+    requestData += '))';
+  }
+  return requestData;
+}
+
+function getGrandParentDataForRequest(idEntry, key) {
+  var requestData = '';
+  if (characterSheet[key] && hasGrandParentLock(idEntry)) {
+    requestData += '(' + key + ' . (';
+    requestData += buildParentData(idEntry, key);
+    if (isLocked(idEntry + '.name.family')) {
+      requestData += '(family-name . ';
+      requestData += buildRequestWord(characterSheet[key]['family-name']);
+      requestData += ')';
+    }
+    requestData += '))';
+  }
+  return requestData;
+}
+
 function buildRequestData() {
   var requestData = '(';
   if (isLocked('given.names')) {
     requestData += '(given-names . #(';
     for (var i = 0; i < characterSheet['names']['given'].length; ++i) {
-      requestData += '((word-language . ' + characterSheet['names']['given'][i]['word-language'] + ')';
-      requestData += ' (word-phonemes . ' + characterSheet['names']['given'][i]['word-phonemes'] + '))';
+      requestData += buildRequestWord(characterSheet['names']['given'][i]);
     }
     requestData += '))';
   }
   if (isLocked('other.name')) {
     requestData += '(other-name . ';
-    requestData += '((word-language . ' + characterSheet['names']['other']['word-language'] + ')';
-    requestData += ' (word-phonemes . ' + characterSheet['names']['other']['word-phonemes'] + '))';
+    requestData += buildRequestWord(characterSheet['names']['other']);
     requestData += ')';
   }
   requestData += getDataForRequest('language', 'language', characterSheet['names']['language']['key']);
@@ -187,7 +249,13 @@ function buildRequestData() {
   traits += ')';
   requestData += getDataForRequest('traits.other', 'traits', traits);
   requestData += getDataForRequest('motto', 'motto', '"' + characterSheet['motto'].replace(/"/g, '\\"') + '"');
-  /* TODO */
+  /**/
+  requestData += getParentDataForRequest('mother', 'mother');
+  requestData += getParentDataForRequest('father', 'father');
+  requestData += getGrandParentDataForRequest('grandmother.mother', 'gmm');
+  requestData += getGrandParentDataForRequest('grandfather.mother', 'gfm');
+  requestData += getGrandParentDataForRequest('grandmother.father', 'gmf');
+  requestData += getGrandParentDataForRequest('grandfather.father', 'gff');
   requestData += ')';
   console.log(requestData);
   return requestData;
