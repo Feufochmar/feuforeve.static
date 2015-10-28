@@ -2,7 +2,7 @@ var characterSheet = {};
 
 function setEntry(entryKey, entryValue) {
   var textInput = document.getElementById('output.' + entryKey);
-  textInput.value = entryValue;
+  textInput.innerHTML = entryValue;
 }
 
 function setSpeciesEntry(speciesKey, speciesValue) {
@@ -94,7 +94,10 @@ function updateEntries() {
   }
   var natures = '';
   for (var i = 0; i < characterSheet['natures'].length; ++i) {
-    natures += characterSheet['natures'][i] + ' ';
+    natures += characterSheet['natures'][i];
+    if (i < (characterSheet['natures'].length - 1)) {
+      natures += ', ';
+    }
   }
   setEntry('traits.nature', natures);
   var traits = '';
