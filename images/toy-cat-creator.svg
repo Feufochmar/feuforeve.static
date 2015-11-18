@@ -19,14 +19,14 @@
    onload="initColors();disableContext();">
   <title
      id="title4919">Toy Cat Creator</title>
-  <script
-     id="script.disable.context.menu"><![CDATA[function disableContext() {
+  <script id="script.disable.context.menu"><![CDATA[
+function disableContext() {
   document.oncontextmenu = function() {
     return false;
   }
 }]]></script>
-  <script
-     id="script.layers.data">var alternativePatterns = {
+  <script id="script.layers.data"><![CDATA[
+var alternativePatterns = {
   'tail': {
     'layers': ['layer.tail.pattern.seeds', 'layer.tail.pattern.itchy'],
     'idx': 0
@@ -127,9 +127,8 @@
     'idx': 0
   }
 }
-</script>
-  <script
-     id="script.layers.logic">
+]]></script>
+  <script id="script.layers.logic"><![CDATA[
 function updatePattern(pattern, newIdx) {
   var currentLayer = document.getElementById(pattern['layers'][pattern['idx']]);
   currentLayer.style.display = 'none';
@@ -158,9 +157,9 @@ function randomizeLayers() {
   updatePattern(alternativePatterns['clothes-top-above'], alternativePatterns['clothes-top']['idx']);
   /* clothes-top-below */
   updatePattern(alternativePatterns['clothes-top-below'], alternativePatterns['clothes-top']['idx']);
-}</script>
-  <script
-     id="script.colors.data"><![CDATA[var imageColors = {
+}]]></script>
+  <script id="script.colors.data"><![CDATA[
+var imageColors = {
   'body.color.1': {'h': 330, 's': 83, 'l': 50},
   'body.color.2': {'h': 0, 's': 100, 'l': 89},
   'ear.right.1': {'h': 330, 's': 83, 'l': 50},
@@ -184,9 +183,8 @@ function randomizeLayers() {
   'hat.1': {'h': 330, 's': 100, 'l': 50},
   'hat.2': {'h': 330, 's': 100, 'l': 50}
 };
-  ]]></script>
-  <script
-     id="script.colors.logic"><![CDATA[
+]]></script>
+  <script id="script.colors.logic"><![CDATA[
 var colorPicker = {
   'class': 'body.color.1',
   'old-color': {'h': 0, 's': 0, 'l': 0},
@@ -278,8 +276,7 @@ function randomizeColors() {
     changeColorOfClass(cls);
   }
 }]]></script>
-  <script
-     id="host.api"><![CDATA[
+  <script id="host.api"><![CDATA[
 function readIdxPattern(arr, i, pat) {
   if (i < arr.length) {
     var n = arr[i];
@@ -447,7 +444,7 @@ function notifyChangeState() {
 function addChangeStateCallback(callback) {
   notifiers = notifiers.push(callback);
 }
-  ]]></script>
+]]></script>
   <defs
      id="defs4" />
   <sodipodi:namedview
