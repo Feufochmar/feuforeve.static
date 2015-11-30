@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Prattling;
+  src: url('Prattling.otf');
+}
+
+.prattling {
+  font-family: "Prattling";
+}
+
+.font-contents {
+  text-align: center;
+  margin: 5px;
+  position: relative;
+}
+
+.font-example {
+  padding-top: 1ex;
+  padding-bottom: 2ex;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 5px;
+  border-style: solid;
+  border-width: thin;
+  border-color: hsla(230, 10%, 20%, 1.0);
+  border-radius: 5px;
+  font-size: medium;
+  display: inline-block;
+}
+
+.font-playfield {
+  font-size: 15;
+}
