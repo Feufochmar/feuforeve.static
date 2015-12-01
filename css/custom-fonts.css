@@ -1,6 +1,6 @@
 @font-face {
   font-family: Prattling;
-  src: url('Prattling.otf');
+  src: url('http://static.feuforeve.fr/fonts/Prattling.otf');
 }
 
 .prattling {
@@ -28,5 +28,5 @@
 }
 
 .font-playfield {
-  font-size: 15;
+  font-size: large;
 }
