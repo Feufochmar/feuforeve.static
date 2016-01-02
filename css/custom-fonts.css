@@ -5,6 +5,11 @@
 
 .prattling {
   font-family: "Prattling";
+  font-variant-ligatures: discretionary-ligatures;
+  -moz-font-feature-settings: "dlig";
+  -ms-font-feature-settings: "dlig";
+  -webkit-font-feature-settings: "dlig";
+  font-feature-settings: "dlig";
 }
 
 @font-face {
@@ -14,6 +19,11 @@
 
 .furfur {
   font-family: "Furfur";
+  font-variant-ligatures: discretionary-ligatures;
+  -moz-font-feature-settings: "dlig";
+  -ms-font-feature-settings: "dlig";
+  -webkit-font-feature-settings: "dlig";
+  font-feature-settings: "dlig";
 }
 
 .font-contents {
