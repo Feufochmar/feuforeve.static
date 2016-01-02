@@ -7,6 +7,15 @@
   font-family: "Prattling";
 }
 
+@font-face {
+  font-family: Furfur;
+  src: url('http://static.feuforeve.fr/fonts/Furfur.otf');
+}
+
+.furfur {
+  font-family: "Furfur";
+}
+
 .font-contents {
   text-align: center;
   margin: 5px;
@@ -28,7 +37,7 @@
 }
 
 .font-playfield {
-  font-size: large;
+  font-size: x-large;
 }
 
 textarea {
