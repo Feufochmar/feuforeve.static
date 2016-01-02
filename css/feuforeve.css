@@ -43,7 +43,7 @@ hr {
 }
 
 footer {
-  background-color: hsla(230, 10%, 90%, 0.40);
+  background-color: hsla(230, 10%, 90%, 0.60);
 
   border-style: solid;
   border-width: thin;
@@ -55,7 +55,7 @@ footer {
 }
 
 article {
-  background-color: hsla(230, 10%, 90%, 0.40);
+  background-color: hsla(230, 10%, 90%, 0.60);
   border-style: solid;
   border-width: thin;
   border-radius: 5px;
@@ -64,7 +64,7 @@ article {
 }
 
 nav {
-  background-color: hsla(230, 10%, 90%, 0.40);
+  background-color: hsla(230, 10%, 90%, 0.60);
   border-style: solid;
   border-width: thin;
   border-radius: 5px;
