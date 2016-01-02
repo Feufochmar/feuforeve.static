@@ -30,3 +30,8 @@
 .font-playfield {
   font-size: large;
 }
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
