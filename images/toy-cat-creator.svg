@@ -19,13 +19,15 @@
    onload="initColors();disableContext();">
   <title
      id="title4919">Toy Cat Creator</title>
-  <script id="script.disable.context.menu"><![CDATA[
+  <script
+     id="script.disable.context.menu"><![CDATA[
 function disableContext() {
   document.oncontextmenu = function() {
     return false;
   }
 }]]></script>
-  <script id="script.layers.data"><![CDATA[
+  <script
+     id="script.layers.data"><![CDATA[
 var alternativePatterns = {
   'tail': {
     'layers': ['layer.tail.pattern.seeds', 'layer.tail.pattern.itchy'],
@@ -35,7 +37,8 @@ var alternativePatterns = {
     'layers': [
       'layer.hair.above.seeds', 'layer.hair.above.itchy', 'layer.hair.above.bellith',
       'layer.hair.above.id', 'layer.hair.above.misc', 'layer.hair.above.misc.2',
-      'layer.hair.above.broken','layer.hair.above.fluffy.kiriban'
+      'layer.hair.above.broken', 'layer.hair.above.fluffy.kiriban',
+      'layer.hair.above.jasmaby'
     ],
     'idx': 0
   },
@@ -43,7 +46,8 @@ var alternativePatterns = {
     'layers': [
       'layer.none', 'layer.hair.below.itchy', 'layer.hair.below.bellith',
       'layer.hair.below.id', 'layer.hair.below.misc', 'layer.hair.below.misc.2',
-      'layer.hair.below.broken','layer.hair.below.fluffy.kiriban'
+      'layer.hair.below.broken', 'layer.hair.below.fluffy.kiriban',
+      'layer.hair.below.jasmaby'
     ],
     'idx': 0
   },
@@ -78,7 +82,9 @@ var alternativePatterns = {
       'layer.none', 'layer.clothes.bottom.seeds', 'layer.clothes.bottom.itchy',
       'layer.clothes.bottom.potion', 'layer.clothes.bottom.misc.1',
       'layer.clothes.bottom.broken', 'layer.clothes.bottom.fluffy.kiriban',
-      'layer.clothes.bottom.andre', 'layer.clothes.bottom.try.try.again'
+      'layer.clothes.bottom.andre', 'layer.clothes.bottom.try.try.again',
+      'layer.clothes.bottom.alice', 'layer.clothes.bottom.jasmaby',
+      'layer.clothes.bottom.charthur'
     ],
     'idx': 1
   },
@@ -86,7 +92,7 @@ var alternativePatterns = {
     'layers': [
       'layer.none', 'layer.clothes.top.seeds', 'layer.clothes.top.itchy', 'layer.none',
       'layer.clothes.top.misc.1', 'layer.clothes.top.broken', 'layer.none', 'layer.none',
-      'layer.none'
+      'layer.none', 'layer.none', 'layer.clothes.top.jasmaby', 'layer.none'
     ],
     'idx': 1
   },
@@ -95,14 +101,16 @@ var alternativePatterns = {
       'layer.none', 'layer.none', 'layer.clothes.top.itchy.above', 'layer.clothes.top.potion.above',
       'layer.clothes.top.misc.1.above', 'layer.clothes.top.broken.above',
       'layer.clothes.top.fluffy.kiriban.above', 'layer.clothes.top.andre.above',
-      'layer.clothes.top.try.try.again.above'
+      'layer.clothes.top.try.try.again.above', 'layer.clothes.top.alice.above',
+      'layer.clothes.top.jasmaby.above', 'layer.clothes.top.charthur.above'
     ],
     'idx': 1
   },
   'clothes-top-below': {
     'layers': [
       'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.potion.below', 'layer.none',
-      'layer.none', 'layer.none', 'layer.none', 'layer.none'
+      'layer.none', 'layer.none', 'layer.none', 'layer.none', 'layer.clothes.top.alice.below',
+      'layer.none', 'layer.none'
     ],
     'idx': 1
   },
@@ -122,13 +130,15 @@ var alternativePatterns = {
   'hat': {
     'layers': [
       'layer.none', 'layer.hat.itchy', 'layer.hat.broken', 'layer.hat.andre',
-      'layer.hat.try.try.again', 'layer.hat.try.try.again.2'
+      'layer.hat.try.try.again', 'layer.hat.try.try.again.2', 'layer.hat.jasmaby',
+      'layer.hat.charthur'
     ],
     'idx': 0
   }
 }
 ]]></script>
-  <script id="script.layers.logic"><![CDATA[
+  <script
+     id="script.layers.logic"><![CDATA[
 function updatePattern(pattern, newIdx) {
   var currentLayer = document.getElementById(pattern['layers'][pattern['idx']]);
   currentLayer.style.display = 'none';
@@ -158,8 +168,8 @@ function randomizeLayers() {
   /* clothes-top-below */
   updatePattern(alternativePatterns['clothes-top-below'], alternativePatterns['clothes-top']['idx']);
 }]]></script>
-  <script id="script.colors.data"><![CDATA[
-var imageColors = {
+  <script
+     id="script.colors.data"><![CDATA[var imageColors = {
   'body.color.1': {'h': 330, 's': 83, 'l': 50},
   'body.color.2': {'h': 0, 's': 100, 'l': 89},
   'ear.right.1': {'h': 330, 's': 83, 'l': 50},
@@ -183,8 +193,9 @@ var imageColors = {
   'hat.1': {'h': 330, 's': 100, 'l': 50},
   'hat.2': {'h': 330, 's': 100, 'l': 50}
 };
-]]></script>
-  <script id="script.colors.logic"><![CDATA[
+  ]]></script>
+  <script
+     id="script.colors.logic"><![CDATA[
 var colorPicker = {
   'class': 'body.color.1',
   'old-color': {'h': 0, 's': 0, 'l': 0},
@@ -276,7 +287,8 @@ function randomizeColors() {
     changeColorOfClass(cls);
   }
 }]]></script>
-  <script id="host.api"><![CDATA[
+  <script
+     id="host.api"><![CDATA[
 function readIdxPattern(arr, i, pat) {
   if (i < arr.length) {
     var n = arr[i];
@@ -444,7 +456,7 @@ function notifyChangeState() {
 function addChangeStateCallback(callback) {
   notifiers.push(callback);
 }
-]]></script>
+  ]]></script>
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -454,15 +466,15 @@ function addChangeStateCallback(callback) {
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="28.06977"
-     inkscape:cy="332.10404"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="370.86488"
+     inkscape:cy="384.06722"
      inkscape:document-units="px"
-     inkscape:current-layer="layer.underwear.bottom.try.try.again"
+     inkscape:current-layer="toy.cat.creator.by.feufochmar.based.on.glip.floraverse"
      showgrid="false"
      units="px"
      width="1000px"
-     showguides="false" />
+     showguides="true" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -541,7 +553,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="controls"
      class="controls"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:80.00000119%;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1856,7 +1869,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      style="display:inline" />
   <g
      inkscape:groupmode="layer"
-     id="layer13"
+     id="layer.tail.back"
      class="layer-tail-back"
      style="display:inline"
      sodipodi:insensitive="true">
@@ -2000,10 +2013,45 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer.clothes.top.potion.below"
-     class="layer-clothes-top-potion-below"
+     id="layer.hair.below.jasmaby"
+     class="layer-hair-below-jasmaby"
      sodipodi:insensitive="true"
      style="display:none">
+    <path
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 266,100 c 0,0 -9.73223,60.32322 -16.73223,87.32322 -7,27 -48.56497,62.72183 -49.56497,96.72183 -1,34 14.57912,52.41153 6.2972,73.70495 -7.73847,19.89616 -9.70836,28.93232 -13.5,32.25 5.97393,-1.08617 13.19671,-2.30923 14.75,-10.75 4.75,4 0.75,15.75 0.75,15.75 0,0 11.75,-5.25 12.75,-18.25 6.25,4 11.5,14.5 11.5,14.5 0,0 3.33579,-14.93629 3.33579,-30.93629 C 235.58579,344.31371 264,342 263,300 262,258 265.90518,230.66688 278.5,208.5 291,186.5 311,140 311,123 c 0,-17 -45,-23 -45,-23 z"
+       id="hair.below.jasmaby.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssscccccssssc"
+       class="hair" />
+    <path
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 383.9521,99.9999 c 0,0 9.73223,60.32322 16.73223,87.32322 7,26.99999 48.56497,62.72182 49.56497,96.72182 1,34 -14.57912,52.41153 -6.2972,73.70495 7.73847,19.89616 9.70836,28.93232 13.5,32.25 -5.97393,-1.08617 -13.19671,-2.30923 -14.75,-10.75 -4.75,4 -0.75,15.75 -0.75,15.75 0,0 -11.75,-5.25 -12.75,-18.25 -6.25,4 -11.5,14.5 -11.5,14.5 0,0 -3.33579,-14.93629 -3.33579,-30.93629 0,-16 -28.41421,-18.31371 -27.41421,-60.31371 1,-42 -2.90518,-69.33312 -15.5,-91.5 -12.5,-21.99999 -32.5,-68.49999 -32.5,-85.49999 0,-17 45,-23 45,-23 z"
+       id="hair.below.jasmaby.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssscccccssssc"
+       class="hair" />
+    <path
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 262.85662,130.96703 59.2647,29.53345 c 0,0 -5.72446,24.01403 -51.38486,35.09115 19.03987,-17.56071 -7.87984,-64.6246 -7.87984,-64.6246 z"
+       id="hair.below.jasmaby.3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       class="hair" />
+    <path
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 384.98877,129.96749 -59.73957,31.41734 c 0,0 11.02776,23.4837 54.39006,34.56082 -19.03987,-17.56071 5.34951,-65.97816 5.34951,-65.97816 z"
+       id="hair.below.jasmaby.4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       class="hair" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.potion.below"
+     class="layer-clothes-top-potion-below"
+     style="display:none"
+     sodipodi:insensitive="true">
     <path
        class="clothes.top.1"
        sodipodi:nodetypes="ccccc"
@@ -2011,6 +2059,20 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="clothes.top.potion.below"
        d="m 234.22656,256.91992 c -3.58111,13.36489 -24.97124,102.4881 -24.84961,143.12108 77.08008,8.14454 153.66016,8.98221 231.24024,0 0.12163,-40.63297 -21.2685,-129.76009 -24.84961,-143.12498 z"
        style="display:inline;opacity:1;fill:#1d0046;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.alice.below"
+     class="layer-clothes-top-alice-below"
+     sodipodi:insensitive="true"
+     style="display:none">
+    <path
+       style="opacity:1;fill:#241e42;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 324.00195,207.7168 0,0.12109 c -46.24166,2.68901 -53.17551,7.84674 -89.16601,24.71484 -27.43509,133.4388 -12.32672,266.87761 -8,400.31641 l 25.11523,-10.53906 0,13.8125 13.73047,-4.29688 12,11.40625 26.64844,-11.45703 19.67187,8 1.97266,0 19.67187,-8 26.6504,11.45703 12,-11.40625 13.72851,4.29688 0,-13.8125 25.11523,10.53906 c 6.02838,-134.88798 18.37056,-270.82825 -8,-400.31641 -35.9905,-16.8681 -42.92435,-22.02583 -89.16601,-24.71484 l 0,-0.12109 c -0.3431,0.019 -0.64661,0.0412 -0.98633,0.0605 -0.33971,-0.0193 -0.64323,-0.0415 -0.98633,-0.0605 z"
+       id="clothes.top.alice.below"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccc"
+       class="clothes.top.1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2049,7 +2111,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer2"
+     id="layer.body"
      class="layer-body"
      sodipodi:insensitive="true">
     <path
@@ -2062,7 +2124,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      class="layer-digits"
-     id="g4386"
+     id="layer.digits"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <path
@@ -2074,7 +2136,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer4"
+     id="layer.belly"
      class="layer-belly"
      sodipodi:insensitive="true"
      style="display:inline">
@@ -2207,7 +2269,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer5"
+     id="layer.eyes.white"
      class="layer-eyes-white"
      sodipodi:insensitive="true"
      style="display:inline">
@@ -2291,7 +2353,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer9"
+     id="layer.mouth.nose"
      class="layer-mouth-nose"
      sodipodi:insensitive="true"
      style="display:inline">
@@ -2307,7 +2369,8 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      inkscape:groupmode="layer"
      id="layer.underwear.top"
      class="layer-underwear-top"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     style="display:inline">
     <path
        sodipodi:type="inkscape:offset"
        inkscape:radius="2.0009036"
@@ -2336,7 +2399,7 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
      class="layer-underwear-bottom-try-try-again"
      id="layer.underwear.bottom.try.try.again"
      inkscape:groupmode="layer"
-     style="display:inline"
+     style="display:none"
      sodipodi:insensitive="true">
     <path
        sodipodi:type="inkscape:offset"
@@ -2632,6 +2695,26 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="clothes.top.broken.2"
        class="clothes.top.2"
        inkscape:connector-curvature="0" />
+  </g>
+  <g
+     style="display:none"
+     class="layer-clothes-top-jasmaby"
+     id="layer.clothes.top.jasmaby"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 272.91211,280.30273 -6.27539,0 c -1.16847,2.8e-4 -2.08815,0.99743 -1.99414,2.16211 1.42761,17.64795 4.12695,53.93266 4.12695,75.49805 0,4.6478 -0.21071,9.41455 -0.54492,14.26953 -0.0785,1.15573 0.83769,2.13648 1.99609,2.13672 l 110.49805,0 c 1.1534,3.8e-4 2.06834,-0.97179 1.99805,-2.12305 -0.30006,-4.86072 -0.49024,-9.63219 -0.49024,-14.28515 0,-21.57546 2.16047,-57.87141 3.30274,-75.5293 0.0738,-1.15274 -0.841,-2.12838 -1.9961,-2.12891 l -6.31836,0 z"
+       id="clothes.top.jasmaby.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsccccscccc"
+       class="clothes.top.2" />
+    <path
+       style="display:inline;opacity:1;fill:#fce7c3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 265.03516,287.55078 c 1.47697,18.76895 3.73437,50.5384 3.73437,70.41211 0,2.78691 -0.0821,5.62051 -0.21484,8.48633 l 113.875,0 c -0.11907,-2.86388 -0.20313,-5.70305 -0.20313,-8.48828 0,-19.8728 1.80637,-51.62757 2.98828,-70.41016 l -120.17968,0 z"
+       id="clothes.top.jasmaby.1"
+       inkscape:connector-curvature="0"
+       class="clothes.top.1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2967,6 +3050,72 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        class="clothes.bottom.1" />
   </g>
   <g
+     style="display:none;opacity:1"
+     class="layer-clothes-bottom-alice"
+     id="layer.clothes.bottom.alice"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#241e42;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 261.27103,411.0335 c 0,11.26193 -21.10366,103.21315 -25.95703,121.32618 -5.55776,20.74186 30.62422,25.48623 43.0293,4 6.01884,22.4626 40.1736,26.96172 46.32617,4 6.16054,22.99143 38.82933,17.7391 44.6543,-4 12.135,21.01843 49.53404,16.41606 44.0625,-4.004 -4.5812,-17.09728 -24.06641,-110.48246 -24.06641,-121.32227 z"
+       id="clothes.bottom.alice.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscccscc"
+       class="clothes.bottom.1" />
+    <path
+       style="display:inline;opacity:1;fill:#f5d3e4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 240.33984,512.82617 c -2.16544,8.55898 -4.03283,15.82892 -5.02539,19.53321 -5.55776,20.74185 30.62422,25.48622 43.0293,4 6.01884,22.46259 40.1736,26.96172 46.32617,4 6.16054,22.99143 38.82933,17.7391 44.6543,-4 12.135,21.01842 49.53404,16.41615 44.0625,-4.00391 -0.93546,-3.49118 -2.67901,-10.65956 -4.69727,-19.16016 -52.67655,7.21949 -115.4523,6.78743 -168.34961,-0.36914 z"
+       id="clothes.bottom.alice.2"
+       class="clothes.bottom.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cscccscc" />
+  </g>
+  <g
+     style="display:none;opacity:1"
+     class="layer-clothes-bottom-jasmaby"
+     id="layer.clothes.bottom.jasmaby"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 261.30469,411.842 c 0,0 -19.9904,122.90656 -19.9904,166.518 0,12.22355 0.23821,15.17869 27.02946,8 0.45433,11.55443 22.53006,7.96547 36.32666,0 11.79514,11.79514 29.67583,10.97749 40.65332,0 16.07737,9.28227 36.44256,11.45019 36.32666,0 27.54915,7.38177 27.73764,5.64959 27.73657,-8.004 -0.003,-41.35962 -20.03735,-166.514 -20.03735,-166.514 z"
+       id="clothes.bottom.jasmaby.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csccccscc"
+       class="clothes.bottom.2" />
+    <path
+       style="display:inline;opacity:1;fill:#fce7c3;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 307.66016,417.79688 c -16.80577,0.006 -33.03178,0.077 -47.35157,0.2871 -3.98733,25.17974 -18.99414,122.44588 -18.99414,160.27735 0,2.22519 0.011,4.1326 0.18555,5.73828 5.83504,0.57839 16.88742,-1.99195 21.29688,-2.59766 4.91741,-1.70096 10.4959,0.44083 12.26367,5.4668 8.36915,2.64751 17.20833,-1.846 25.02148,-4.73437 3.82757,-1.96511 7.97662,-1.65189 10.65235,1.84765 9.21517,7.10567 23.3175,5.91269 31.34765,-2.41992 7.4227,-3.14234 13.27823,4.75595 20.44336,5.36523 4.49183,1.2075 12.40334,3.05064 14.09961,-2.90039 2.81408,-4.93832 8.89585,-3.75284 13.22266,-1.96289 3.53024,0.70635 14.3475,2.99836 19.37109,2.21094 0.15293,-1.6654 0.16815,-3.6517 0.16797,-6.01953 -0.003,-35.99859 -15.15721,-135.32585 -19.0918,-160.50977 -24.24238,0.0949 -54.13105,-0.0597 -82.63476,-0.0488 z"
+       id="clothes.bottom.jasmaby.1"
+       class="clothes.bottom.1"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.bottom.charthur"
+     class="layer-clothes-bottom-charthur"
+     style="display:none;opacity:1">
+    <path
+       class="clothes.bottom.1"
+       sodipodi:nodetypes="cccccsscsscccccc"
+       inkscape:connector-curvature="0"
+       id="clothes.bottom.charthur"
+       d="m 262.51172,402.16406 c -0.83812,9.65703 -4.84584,43.54246 -5.20703,53.67774 -0.44407,37.94587 -5.55936,44.44454 1.03906,106.52148 10.98634,5.38642 36.7028,6.31363 48.37695,0 0,-31.28845 -0.72477,-34.86383 1.38282,-54.10937 2.30856,-20.8041 4.8863,-36.53583 5.57617,-39.51368 0.54303,-2.34402 2.1329,-4.39807 4.33789,-5.91796 2.20499,-1.5199 4.97846,-2.35234 6.99023,-2.35157 2.00841,6.5e-4 4.7764,0.83256 6.97657,2.35157 2.20015,1.519 3.78713,3.57238 4.33007,5.91601 0.68989,2.97793 3.26764,18.70812 5.57617,39.51172 2.11672,18.49633 1.38282,22.0305 1.38282,54.11328 11.61861,4.73134 37.81391,6.96905 48.37695,0 6.31769,-62.15511 2.04055,-68.46615 1.04297,-106.50195 -0.30405,-10.13567 -4.20667,-44.02823 -4.92616,-53.69727 z"
+       style="opacity:1;fill:#5b4370;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path7097"
+       d="m 291.22897,402.0313 c -0.50367,31.54497 -0.64714,31.11445 -34.03442,40.06055"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path7099"
+       d="m 359.04701,402.03118 c 0,30.60491 0.16811,30.9861 34.03442,40.06055"
+       style="display:inline;opacity:1;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
      inkscape:groupmode="layer"
      id="layer.clothes.top.itchy.above"
      class="layer-clothes-top-itchy-above"
@@ -3238,6 +3387,193 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer.clothes.top.alice.above"
+     class="layer-clothes-top-alice-above"
+     style="display:none;opacity:1"
+     sodipodi:insensitive="true">
+    <path
+       style="opacity:1;fill:#241e42;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 312.56836,197.62891 -1.65039,-1.57618 -38.20703,0 c -1.8005,0 -2.39334,1.66635 -3.25,3.25 l 0,3.69727 -9.71094,0 c -1.8005,0 -2.5513,1.5906 -3.25,3.25 l 0,4.75 -7.75,0 c -2.77,0 -3.69647,2.55588 -5,5 l 0,3.75 -5,0 c -1.8005,0 -3.25,1.4495 -3.25,3.25 l 0,5.60352 c -8.41117,35.84047 -13.27336,63.35491 -14.44141,108.18164 31.46581,-39.21155 39.35427,-81.37027 99.19336,-117.03516 l 9.35352,0 c 65.71336,37.84569 67.0335,77.99113 99.19336,117.03516 -1.1614,-44.57193 -5.99824,-72.031 -14.29883,-107.57422 L 414.5,223 c 0,-1.8005 -1.4495,-3.25 -3.25,-3.25 l -4.75,0 0,-3.75 c 0,-2.77 -2.23,-5 -5,-5 l -6.75,0 0,-4.75 c 0,-1.8005 -1.4495,-3.25 -3.25,-3.25 l -9.71094,0 0,-3.69727 c 0,-1.8005 -1.4495,-3.25 -3.25,-3.25 l -39.59961,0 -1.65039,1.57618 -1.4082,0.42382 -21.9043,0 z"
+       id="clothes.top.alice.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsscsscsscssccccccsscsscsscssccccc"
+       class="clothes.top.1" />
+    <ellipse
+       style="opacity:1;fill:#bfd11c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.alice.2"
+       cx="325.09235"
+       cy="209.82588"
+       rx="10.606602"
+       ry="16.086679"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#241e42;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.alice.3"
+       cx="325.09259"
+       cy="209.82632"
+       rx="6.1871843"
+       ry="11.313708"
+       class="clothes.top.1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.jasmaby.above"
+     class="layer-clothes-top-jasmaby-above"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.1"
+       cx="281.11172"
+       cy="206.877"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.2"
+       cx="295.40024"
+       cy="217.93546"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.3"
+       cx="314.36432"
+       cy="223.45448"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.6"
+       cx="-368.76328"
+       cy="206.877"
+       transform="scale(-1,1)"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.5"
+       cx="-354.47476"
+       cy="217.93546"
+       transform="scale(-1,1)"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#f29f0f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.4"
+       cx="-335.51068"
+       cy="223.45448"
+       transform="scale(-1,1)"
+       rx="10.626306"
+       ry="10.613533"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.7"
+       cx="280.73022"
+       cy="203.23531"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.8"
+       cx="294.05795"
+       cy="213.81078"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.9"
+       cx="314.47464"
+       cy="221.09615"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.12"
+       cx="-369.14395"
+       cy="203.23531"
+       transform="scale(-1,1)"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.11"
+       cx="-355.81622"
+       cy="213.81078"
+       transform="scale(-1,1)"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+    <ellipse
+       style="opacity:0.75;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.jasmaby.above.10"
+       cx="-335.39954"
+       cy="221.09615"
+       transform="scale(-1,1)"
+       rx="2.4748302"
+       ry="2.4718554"
+       class="" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.clothes.top.charthur.above"
+     class="layer-clothes-top-charthur-above"
+     style="display:none;opacity:1"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#5b4370;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 306.91838,200.05262 -34.20703,2 c -10.41262,0 -27.82936,13.93057 -31.21094,26.55079 -3.38158,12.62022 -8.44141,31.76934 -8.44141,40.18164 17.05598,4.57014 64.47733,4.96484 87.19336,4.96484 l 9.35352,0 c 22.2263,0 69.93889,-0.34152 87.19336,-4.96484 0,-8.58172 -4.41043,-25.0625 -8.29883,-39.57422 -3.8884,-14.51172 -20.7723,-26.88072 -29.96094,-27.15821 l -35.59961,-2 c -1.2767,4.19165 -13.18012,16.83271 -17.05859,18 l -1.9043,0 c -3.65153,-1.88634 -16.6757,-13.45837 -17.05859,-18 z"
+       id="clothes.top.charthur.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczcccczccccc"
+       class="clothes.top.1" />
+    <path
+       style="display:inline;opacity:1;fill:#c9c4e4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 414.9668,255.23438 c -18.5834,4.19705 -63.87672,4.51562 -85.36133,4.51562 l -9.35352,0 c -21.93281,0 -66.88803,-0.36891 -85.31445,-4.50781 -1.11838,5.44686 -1.87891,10.29912 -1.87891,13.54297 17.05598,4.57014 64.47733,4.96484 87.19336,4.96484 l 9.35352,0 c 22.2263,0 69.93889,-0.34152 87.19336,-4.96484 0,-3.44635 -0.7289,-8.19571 -1.83203,-13.55078 z"
+       id="clothes.top.charthur.2"
+       class="clothes.top.2"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;opacity:1;fill:#c9c4e4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 306.91797,200.05273 -14.49805,0.84766 c 6.01947,8.44559 28.38003,29.51134 31.55664,31.15234 l 1.9043,0 c 3.37134,-1.01466 24.8774,-22.77149 31.28711,-31.20117 l -14.22852,-0.79883 c -1.2767,4.19165 -13.18012,16.83271 -17.05859,18 l -1.9043,0 c -3.65153,-1.88634 -16.6757,-13.45837 -17.05859,-18 z"
+       id="clothes.top.charthur.3"
+       class="clothes.top.2"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#c9c4e4;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 325,218.10572 -25,188.89429 25,40 25,-40 z"
+       id="clothes.top.charthur.5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       class="clothes.top.2" />
+    <ellipse
+       style="opacity:1;fill:#c9c4e4;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="clothes.top.charthur.4"
+       cx="325"
+       cy="226.25002"
+       rx="5.75"
+       ry="8.25"
+       class="clothes.top.2" />
+    <path
+       style="opacity:1;fill:#5b4370;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 324.99977,380.10601 -13,26.89429 13,28 13,-28 z"
+       id="clothes.top.charthur.6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       class="clothes.top.1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer.hair.above.seeds"
      class="layer-hair-above"
      style="display:inline"
@@ -3370,6 +3706,20 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        id="hair.below.fluffy.kiriban.2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ssscsssscsss"
+       class="hair" />
+  </g>
+  <g
+     style="display:none"
+     class="layer-hair-above-jasmaby"
+     id="layer.hair.above.jasmaby"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <path
+       style="display:inline;opacity:1;fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 321.21484,62.597656 c -11.57001,0.102029 -33.94406,1.835973 -46.66796,15.126953 -11.5802,12.096296 -15.14989,23.797851 -15.47461,28.621091 -0.41016,6.09225 -0.0464,13.29142 2.26953,20.28711 3.47923,-12.99341 9.86876,-25.89853 22.22851,-34.10156 9.90354,-6.57287 29.08707,-9.314282 41.61133,-9.310547 12.52426,0.0037 26.487,-0.239388 41.00195,9.310547 12.35975,8.20303 18.74929,21.10815 22.22852,34.10156 2.31593,-6.99569 2.67969,-14.19487 2.26953,-20.28711 -0.32472,-4.82324 -3.89442,-16.524795 -15.47461,-28.621091 -12.72391,-13.29098 -35.096,-15.022971 -46.66601,-15.125 -1.24042,-0.01094 -2.45628,0.02506 -3.65625,0.08984 -1.2048,-0.06521 -2.42449,-0.10278 -3.66993,-0.09179 z"
+       id="hair.fluffy.jasmaby"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssscszccssscs"
        class="hair" />
   </g>
   <g
@@ -3602,5 +3952,190 @@ Based on the character Beleth from glip's Floraverse ( http://floraverse.com/wik
        cx="-129.19777"
        id="hat.try.try.again.reflected.2"
        style="display:inline;opacity:1;fill:#67354f;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer.hat.jasmaby"
+     class="layer-hat-jasmaby"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 380.36428,49.814876 C 381.53929,73.168919 339.48389,108.95736 326.9045,84.291851 314.3251,59.626342 358.73654,40.646608 380.36428,49.814876 Z"
+       id="hat.jasmaby.5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 269.1102,49.815228 c -1.16189,23.354043 40.42361,59.142482 52.86245,34.476976 12.43884,-24.66551 -31.47638,-43.645243 -52.86245,-34.476976 z"
+       id="hat.jasmaby.6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <rect
+       style="opacity:1;fill:#fcecd0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.jasmaby.8"
+       width="6.0126605"
+       height="29.993612"
+       x="289.4754"
+       y="125.86836"
+       ry="2.5625"
+       rx="2.5624998"
+       transform="matrix(0.96587909,-0.25899342,0.25864478,0.9659725,0,0)"
+       class="hat.2" />
+    <rect
+       style="opacity:1;fill:#fcecd0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.jasmaby.9"
+       width="6.0126605"
+       height="29.993612"
+       x="331.63806"
+       y="-42.350609"
+       ry="2.5625"
+       rx="2.5624998"
+       transform="matrix(0.96587909,0.25899342,-0.25864478,0.9659725,0,0)"
+       class="hat.2" />
+    <rect
+       style="opacity:1;fill:#fcecd0;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.jasmaby.7"
+       width="6.0123696"
+       height="32.666042"
+       x="321.42902"
+       y="46.981609"
+       ry="2.5625"
+       rx="2.5625"
+       class="hat.2" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 281.10902,47.477511 c -4.37345,0.08807 -8.49088,0.834644 -11.99954,2.338814 -0.58527,11.764062 9.67873,26.675062 21.59779,35.433016 l 0,-8.417434 c -9.01362,-7.40628 -14.64265,-19.185276 -8.39991,-28.189575 0.27988,-0.403681 0.57578,-0.784752 0.87757,-1.153355 -0.0622,-0.0016 -0.12575,-0.0077 -0.18789,-0.0092 -0.63424,-0.014 -1.26324,-0.01487 -1.88802,-0.0023 z"
+       id="path5593-5-0-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 254.231,80.332738 C 258.62941,58.909549 316.16548,48.781692 323.59589,74.643994 331.0263,100.5063 275.04732,94.78408 254.231,80.332738 Z"
+       id="hat.jasmaby.4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 277.52313,61.897898 c -11.76181,3.452969 -21.57728,10.076973 -23.29335,18.43535 7.42042,5.15149 19.30801,9.189881 31.19833,11.086433 l 0,-3.748981 c -5.31966,-2.683704 -9.71098,-6.614856 -11.88268,-11.739924 -2.45543,-5.794662 -0.41509,-10.598732 3.9777,-14.032878 z"
+       id="path5593-5-3-6"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 370.05726,47.569229 c 3.85472,6.958518 0.82719,15.871395 -5.14855,23.323928 l 0,8.990672 c 9.09359,-8.742993 15.93843,-20.455197 15.45482,-30.067504 -3.05358,-1.294451 -6.56887,-2.011635 -10.30627,-2.247096 z"
+       id="path5593-0-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 395.51896,80.388785 c -4.45365,-21.694793 -62.71238,-31.951049 -70.2361,-5.760863 -7.52374,26.190188 49.15832,20.395417 70.2361,5.760863 z"
+       id="hat.jasmaby.3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 266.24183,110.63915 C 264.9721,89.234406 308.26653,49.977134 321.85991,72.583872 335.45329,95.19061 289.61289,119.04217 266.24183,110.63915 Z"
+       id="hat.jasmaby.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 372.00715,61.741978 c 4.51283,3.511807 6.54236,8.461668 3.81044,14.431852 -2.1575,4.714848 -6.11876,8.421462 -10.90888,11.086432 l 0,4.193813 c 11.70943,-1.98343 23.30003,-5.990763 30.60947,-11.065796 -1.73407,-8.447087 -11.63386,-15.143562 -23.51103,-18.646301 z"
+       id="path5593-7-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#f24f0f;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 383.0647,110.74858 C 384.34084,89.235545 340.82791,49.779633 327.16593,72.500753 313.50395,95.221873 359.5757,119.19411 383.0647,110.74858 Z"
+       id="hat.jasmaby.1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       class="hat.1" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 280.47891,82.417543 c -8.54294,9.006918 -14.72916,19.944197 -14.23814,28.221677 17.25487,6.20394 46.73335,-5.17949 55.52278,-20.657222 -7.81121,12.556282 -28.96248,18.977812 -39.09874,6.716063 -3.55174,-4.296498 -3.88383,-9.368942 -2.1859,-14.280518 z m 41.28464,7.564455 c 0.17206,-0.303002 0.35271,-0.604259 0.50866,-0.910302 -0.16947,0.303604 -0.32396,0.613393 -0.50866,0.910302 z"
+       id="path5593-5-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:0.5;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 368.00654,81.601251 c 1.8281,5.044951 1.52856,10.307444 -2.15381,14.762038 -9.68825,11.719931 -29.08107,6.620081 -37.53149,-4.663868 9.94752,14.668289 38.04391,25.054319 54.74372,19.049859 0.50777,-8.55998 -6.08599,-19.953769 -15.05842,-29.148029 z"
+       id="path5593-08"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     style="display:none;opacity:1"
+     class="layer-hat-charthur"
+     id="layer.hat.charthur"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
+    <rect
+       style="opacity:1;fill:#5b4370;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.1"
+       width="97.330727"
+       height="42.242268"
+       x="276.72873"
+       y="33.225979"
+       ry="4.7751265"
+       rx="15"
+       class="hat.1" />
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:0.58823529;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999997;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.3"
+       width="79.5"
+       height="28.571068"
+       x="286.25"
+       y="41.178932"
+       rx="0"
+       ry="0"
+       class="" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.4"
+       width="15.5"
+       height="13.953313"
+       x="286.25"
+       y="41.178932"
+       class="hat.2" />
+    <rect
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.5"
+       width="15.5"
+       height="13.953313"
+       x="302.25"
+       y="55.796688"
+       class="hat.2" />
+    <rect
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.6"
+       width="15.5"
+       height="13.953313"
+       x="318.25"
+       y="41.178932"
+       class="hat.2" />
+    <rect
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.7"
+       width="15.5"
+       height="13.953313"
+       x="334.25"
+       y="55.796688"
+       class="hat.2" />
+    <rect
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="hat.charthur.8"
+       width="15.5"
+       height="13.953313"
+       x="350.25"
+       y="41.178932"
+       class="hat.2" />
+    <path
+       style="fill:#5b4370;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 286,69.6875 c -5.42422,0 -26.57929,6.781891 -17,12.3125 11.60181,-6.698305 100.02094,-7.161015 112.42418,0 9.56886,-5.524587 -10.57697,-12.3125 -15.23484,-12.3125 z"
+       id="hat.charthur.2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sccss"
+       class="hat.1" />
   </g>
 </svg>
